@@ -1,0 +1,1149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102e28">
+<title>160STORE · AI Brand Check | Orymus</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap");
+:root{color-scheme:light;--ink:#17332b;--muted:#50665c;--paper:#f4f6ef;--line:#dce4d9;--green:#317454;--dark:#102e28;--lime:#daf486;--white:#fff}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 system-ui,sans-serif}
+a{color:inherit}
+a:focus-visible,summary:focus-visible{outline:3px solid #5a8d41;outline-offset:4px}
+.wrap{width:min(1152px,calc(100% - 64px));margin-inline:auto}
+.masthead,.hero{background:var(--dark);color:white}
+.masthead .wrap{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #426055}
+.logo{font-size:24px;font-weight:800;letter-spacing:-1.3px}.logo span{color:var(--lime)}
+.flag,.eyebrow,.tag{font-size:.74rem;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
+.flag{color:#c6dace;text-align:right}.eyebrow{margin:0 0 10px;color:var(--green)}
+.hero{padding:48px 0 72px}
+.hero .eyebrow{color:var(--lime)}
+h1,h2,h3,p{margin:0}
+h1,h2{letter-spacing:-.045em;line-height:1.06}
+h1{font-size:clamp(2.7rem,6.4vw,5.2rem);max-width:760px}
+h2{font-size:clamp(2rem,4vw,3rem)}
+h3{font-size:1.13rem;line-height:1.3}
+.hero p.summary{margin-top:17px;color:#d8e7dd;max-width:580px;font-size:1.05rem}
+.scope{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.scope li{border:1px solid #577064;border-radius:999px;padding:4px 11px;color:#e4f0e7;font-size:.8rem}
+.metrics,.split,.actions{display:grid;gap:16px}
+.metrics{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:-34px}
+.card{min-width:0;background:white;border:1px solid var(--line);border-radius:18px;padding:22px}
+.metric.featured{background:var(--lime);border-color:var(--lime)}
+.metric strong{display:block;font-size:clamp(1.9rem,4.6vw,3.4rem);line-height:1;letter-spacing:-.06em;margin:10px 0}
+.desc,.foot{color:var(--muted);font-size:.9rem}
+.metric.featured .desc{color:#374d32}
+.desc{margin-top:6px}
+.jump{margin:25px 0 40px;display:flex;flex-wrap:wrap;gap:8px}
+.jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 13px;background:white;border:1px solid var(--line);border-radius:9px;text-decoration:none;font-size:.86rem;font-weight:650}
+.jump a:hover{background:#e6efdf}
+section[id]{scroll-margin-top:20px;margin:0 0 46px}
+.section-head{margin-bottom:16px}
+.split,.actions{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+.table{border-collapse:collapse;width:100%;margin-top:16px;font-variant-numeric:tabular-nums}
+.table th,.table td{text-align:right;padding:10px 8px;border-bottom:1px solid var(--line)}
+.table th:first-child,.table td:first-child{text-align:left}
+.table th{font-size:.76rem;color:var(--muted)}
+.table tr:last-child td{border-bottom:0}
+.table tr.ours{background:#e9f3e2;font-weight:750}
+.barlist,.plain{list-style:none;padding:0;margin:16px 0 0}
+.barlist li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:7px 0}
+
+progress{grid-column:1/-1;width:100%;height:8px;appearance:none;border:0;background:#e7eee4;border-radius:8px;color:var(--green)}
+progress::-webkit-progress-bar{background:#e7eee4;border-radius:8px}
+progress::-webkit-progress-value{background:var(--green);border-radius:8px}
+progress::-moz-progress-bar{background:var(--green);border-radius:8px}
+.plain li{display:flex;justify-content:space-between;gap:8px 14px;flex-wrap:wrap;align-items:center;padding:9px 0;border-top:1px solid var(--line)}
+.plain a{overflow-wrap:anywhere}
+.badge{display:inline-block;padding:3px 8px;border-radius:6px;background:#edf2eb;color:#3f5648;font-size:.75rem;font-weight:700}
+.positive{background:#e1f2e2;color:#225436}.neutral{background:#eee9da;color:#5e512f}.caution{background:#fff0cf;color:#69490e}.negative{background:#f9e4e0;color:#7a3027}
+.responses{margin-top:16px}
+details{border-top:1px solid var(--line)}
+summary{cursor:pointer;padding:13px 0;min-height:44px;font-weight:650}
+details p{padding-bottom:14px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin:7px 0 0}
+.highlight{background:#edf3e9;padding:12px 14px;border-radius:9px;margin-top:16px}
+.opportunity p{margin-top:9px}
+.footer{border-top:1px solid var(--line);padding:20px 0 32px}
+.footer p+p{margin-top:8px}
+.skip{position:absolute;left:8px;top:8px;padding:10px;background:white;transform:translateY(-150%)}
+.skip:focus{transform:none}
+@media(max-width:760px){
+  .wrap{width:calc(100% - 32px)}
+  .hero{padding:34px 0 56px}
+  .metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:-24px}
+  .featured{grid-column:1/-1}
+  .split,.actions{grid-template-columns:1fr;gap:12px}
+  .card{padding:16px;border-radius:14px}
+  .jump{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:20px 0 32px}
+  section[id]{margin-bottom:34px}
+}
+@media(max-width:360px){.wrap{width:calc(100% - 24px)}.card{padding:12px}.table th,.table td{padding-inline:4px}}
+body{background:#f3f5ee}
+.hero{background:radial-gradient(ellipse at 86% 20%,#305943,transparent 58%),var(--dark)}
+.hero-layout{display:grid;grid-template-columns:1.5fr 1fr;align-items:center;gap:28px}
+.hero-score{background:#ffffff12;border:1px solid #ffffff42;border-radius:22px;padding:24px}
+.hero-score strong{display:block;font-size:clamp(3.5rem,11vw,7rem);line-height:1;letter-spacing:-.075em;color:var(--lime)}
+.hero-score .desc{color:#e0eee4}
+.hero .scope{margin-bottom:8px}
+.metrics{margin-top:0;grid-template-columns:repeat(2,minmax(0,1fr))}
+.results{padding-top:24px}
+.featured{grid-column:auto}
+.section-head{margin-top:34px}
+.stack{display:grid;gap:16px}
+.block{margin-top:16px}
+.eyebrow.num{margin-bottom:6px}
+button{font:inherit;cursor:pointer}
+.cta,.text-button{min-height:44px;border-radius:9px;padding:8px 14px;font-weight:700}
+.cta{border:1px solid transparent;background:var(--lime);color:var(--dark)}
+.cta:hover{background:#ebffa8}
+.text-button{border:1px solid var(--line);background:white;color:var(--dark)}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #5a8d41;outline-offset:3px}
+.prompt{background:var(--dark);color:white;margin-bottom:34px}
+.prompt .desc{color:#d8e7dd}.prompt .eyebrow{color:var(--lime)}
+.prompt-preview{background:#091f1a;border:1px solid #456258;border-radius:10px;padding:14px;margin:14px 0;font: .9rem/1.55 ui-monospace,monospace;overflow-wrap:anywhere}
+.prompt .foot{margin-top:8px;color:#d8e7dd}
+.animated-bar{grid-column:1/-1;height:8px;background:#e7eee4;border-radius:8px;overflow:hidden}
+.animated-bar i{display:block;width:var(--value);height:100%;background:#43805c;border-radius:8px;transform-origin:left}
+.animate .animated-bar i{animation:grow .85s ease-out both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+dialog{width:min(500px,calc(100% - 24px));max-height:calc(100dvh - 24px);overflow:auto;border:1px solid var(--line);border-radius:20px;padding:20px;color:var(--ink);background:white}
+dialog::backdrop{background:#081b17bc}
+.dialog-top{display:flex;align-items:start;justify-content:space-between;gap:10px}
+.dialog-top h2{font-size:1.7rem}
+.close{flex:none;min-width:44px;min-height:44px}
+form label{display:grid;gap:5px;margin:12px 0;font-weight:650}
+input,textarea{width:100%;padding:10px;border:1px solid #8ca093;border-radius:8px;font:inherit;font-size:16px;color:var(--ink)}
+textarea{min-height:150px;resize:vertical}
+#copyStatus{margin-top:8px}
+[hidden]{display:none!important}
+@media(max-width:760px){
+  .hero-layout{grid-template-columns:1fr;gap:18px}
+  .hero{padding:25px 0 22px}
+  .hero-score{padding:16px;border-radius:14px}
+  .hero-score strong{font-size:4rem}
+  .hero p.summary{font-size:.98rem;margin-top:10px}
+  .results{padding-top:14px}
+  .masthead .wrap{min-height:60px}
+}
+@media(max-width:360px){.metrics{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.animate .animated-bar i{animation:none}}
+.donut{width:min(180px,80%);aspect-ratio:1;margin:14px auto;border-radius:50%;background:conic-gradient(#21543e 0 15.1%,#779dc0 15.1% 41.7%,#eac56a 41.7% 67.4%,#af8fc4 67.4% 85.8%,#d48478 85.8%);display:grid;place-items:center}
+.donut::after{content:"";width:63%;height:63%;border-radius:50%;background:white}
+.animate .donut{animation:spin-in .9s ease-out both}
+@keyframes spin-in{from{transform:rotate(-125deg) scale(.85);opacity:.25}to{transform:none;opacity:1}}
+.key{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:5px 12px;font-size:.8rem;margin:12px 0 0}
+.key li::before{content:"";display:inline-block;width:9px;height:9px;margin-right:5px;border-radius:50%;background:var(--dot)}
+.metric strong{margin-bottom:6px}
+.score-layout{display:grid;grid-template-columns:175px 1fr;gap:22px;align-items:center;margin-top:16px}
+.strength,.weakness{text-decoration:underline;text-underline-offset:3px}
+.strength{color:#176745}.weakness{color:#a32d26}
+.sentiment-notes p+p{margin-top:9px}
+.card-footer{display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:1px solid var(--line);margin-top:16px;padding-top:12px}
+.table-scroll{overflow-x:auto}
+.table-scroll:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.rankings{min-width:510px}
+.rankings th,.rankings td{text-align:center}
+.rankings th:nth-child(2),.rankings td:nth-child(2){text-align:left}
+.rankings tbody tr:nth-child(even){background:#f6f8f5}
+.rankings tbody tr.ours{background:#e9f3e2}
+.stack{display:grid;gap:16px}.topic-list{margin-top:14px}
+.action-steps{padding-left:23px;margin:8px 0 0}
+.action-steps li+li{margin-top:6px}
+@media(max-width:760px){.metrics{grid-template-columns:1fr}.score-layout{grid-template-columns:1fr;gap:14px}.score-visual .key{justify-content:center}}
+@media(prefers-reduced-motion:reduce){.animate .donut{animation:none}}
+
+body{background:#f3f5f8;color:#172438}
+.card{border-color:#dae1ea;border-radius:12px}
+.eyebrow.num{color:#52647b;letter-spacing:.09em}
+.metrics{grid-template-columns:minmax(0,1fr) minmax(0,1.55fr)}
+.rank-summary{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dae3ef;border:1px solid #dae3ef;border-radius:8px;overflow:hidden;margin-top:16px}
+.rank-summary div{background:#eef3fa;padding:11px 14px;display:grid;gap:3px}
+.rank-summary b{font-size:1.45rem;line-height:1.2;font-variant-numeric:tabular-nums}
+.rank-summary small,.rank-summary span{font-size:.77rem;color:#40546d}
+.rank-meter{display:grid;gap:3px;min-width:66px;text-align:right}
+.rank-meter::after{content:"";height:3px;border-radius:4px;background:linear-gradient(to right,#8ea9c8 var(--rate),#dfe6ef var(--rate))}
+.ours .rank-meter::after{background:linear-gradient(to right,#237153 var(--rate),#d9e6dc var(--rate))}
+.score-ring{position:relative;width:144px;margin:auto;display:grid;place-items:center}
+.score-ring svg{width:100%;display:block;transform:rotate(-90deg)}
+.score-ring circle{fill:none;stroke-width:8;stroke-linecap:round}
+.ring-track{stroke:#e4e9ef}
+.ring-value{stroke:#258061;stroke-dasharray:61 100}
+.score-ring>div{position:absolute;text-align:center;display:grid;line-height:1.1}
+.score-ring b{font-size:2rem;font-variant-numeric:tabular-nums}
+.score-ring small{color:#52647b}
+.topic-list details[open] summary::after{content:"−"}
+@media(prefers-reduced-motion:reduce){.animate .ring-value{animation:none}}
+
+:root{--dark:#142326;--lime:#dcebdc;--line:#e2e8e7;--green:#276950}
+body{background:#f6f8f7}
+.hero{background:var(--dark);padding-block:38px}
+h1{font-size:clamp(2.15rem,5.4vw,4.2rem);letter-spacing:-.055em;max-width:720px}
+.hero-score{border-radius:10px;padding:20px}
+.hero-score strong{font-size:clamp(3rem,9vw,5rem)}
+.card{border-color:var(--line);border-radius:9px}
+.section-head h2{font-size:2rem}
+.eyebrow.num{font-size:.69rem;color:#586965}
+.metrics{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr)}
+.mentions .desc{margin-top:0}
+.mention-bars{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-top:16px}
+.mention-column{min-width:0;display:grid;grid-template-rows:105px auto;gap:6px;text-align:center;font-size:clamp(.64rem,1.6vw,.76rem);color:#465950}
+.mention-track{height:105px;border-bottom:1px solid #cbd7d2;background:repeating-linear-gradient(to top,transparent 0 25px,#e5ebe8 25px 26px);display:flex;align-items:end;justify-content:center}
+.mention-bar{width:min(65%,40px);height:var(--bar);min-height:2px;border-radius:3px 3px 0 0;background:#a4b7ae;position:relative;transform-origin:bottom}
+.mention-column:first-child .mention-bar{background:#276950}
+.mention-bar b{position:absolute;left:50%;bottom:100%;transform:translateX(-50%);color:#273a34}
+.animate .mention-bar{animation:bar-up .65s ease-out both}
+@keyframes bar-up{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.mention-note,.topic-help{margin-top:10px}
+.mention-evidence{margin-top:9px;font-size:.82rem}
+.mention-evidence ul{padding-left:20px}
+.mention-evidence li+li{margin-top:7px}
+.score-controls{display:flex;gap:6px;flex-wrap:wrap}
+.ring-value{stroke-dasharray:100;stroke-dashoffset:39}
+.topic-table{min-width:610px;margin-top:12px}
+.topic-table th,.topic-table td{text-align:center;padding:8px 6px}
+.topic-table th:first-child{position:sticky;left:0;background:white;text-align:left;min-width:150px;width:30%;box-shadow:1px 0 #e3eae6}
+.topic-table thead th,.topic-table thead th:first-child{background:#eff3f1}
+.topic-toggle{display:flex;align-items:center;gap:7px;background:none;border:0;text-align:left;color:inherit;padding:4px;min-height:44px;font-weight:700;font-size:.84rem}
+.topic-toggle small{display:block;font-weight:400;color:#586b62}
+.chevron{display:inline-block;font-size:1.15rem}
+.topic-toggle[aria-expanded="true"] .chevron{transform:rotate(90deg)}
+.brand-label{display:inline-block;white-space:nowrap;font-size:.76rem;color:#445951}
+.brand-label.is-ours{color:#145d43;background:#e4f2eb;padding:2px 6px;border-radius:4px;font-weight:750}
+.prompt-rows tr,.prompt-rows th:first-child{background:#f4f7f5}
+.prompt-rows th:first-child{font-weight:500;padding-left:15px}
+.topic-table tbody tr:last-child td{border-bottom:1px solid var(--line)}
+@media(max-width:760px){.metrics{grid-template-columns:1fr}.hero{padding-block:24px}.score-layout{grid-template-columns:1fr;gap:14px}.score-visual .key{justify-content:center}}
+@media(prefers-reduced-motion:reduce){.animate .mention-bar{animation:none}}
+
+:root{--ink:#1c3027;--dark:#172a23;--muted:#4b6256;--paper:#f3f7f4;--line:#dae7de;--green:#205b43;--lime:#226247;--white:#ffffff}
+body{background:var(--paper);color:var(--ink)}
+.masthead,.hero{background:#ffffff;color:var(--ink)}
+.masthead{border-bottom:1px solid var(--line)}.masthead .wrap{border:0}.logo span,.hero .eyebrow{color:var(--green)}
+.hero{padding-block:36px}.hero p.summary,.hero-score .desc{color:var(--muted)}
+.hero-score{background:#eaf3ed;border-color:#d6e6db}.hero-score strong{color:var(--green)}
+.scope li{color:var(--muted);border-color:#d7e5da}
+.card,dialog{background:#ffffff;color:var(--ink);border-color:var(--line)}
+.eyebrow.num,.topic-toggle small,.brand-label,.foot{color:var(--muted)}
+.cta,.cta:hover{color:white;background:#226247}.cta:hover{background:#174832}
+.badge,.highlight,.rank-summary div,.rankings tbody tr:nth-child(even),.topic-table thead th,.topic-table thead th:first-child,.prompt-rows tr,.prompt-rows th:first-child{background:#edf4ef;color:var(--ink)}
+.rank-summary{background:var(--line);border-color:var(--line)}.rank-summary small,.rank-summary span{color:var(--muted)}
+.rankings tbody tr.ours,.brand-label.is-ours{background:#e3f0e7;color:#205b43}
+.rank-meter::after{background:linear-gradient(to right,#8eac9a var(--rate),#e1ebe4 var(--rate))}
+.ours .rank-meter::after{background:linear-gradient(to right,#226247 var(--rate),#e1ebe4 var(--rate))}
+.donut{background:conic-gradient(#226247 0 15.1%,#375f4c 15.1% 41.7%,#58816a 41.7% 67.4%,#83a892 67.4% 85.8%,#b9d1c0 85.8%)}.donut::after{background:#ffffff}
+.mention-column:first-child .mention-bar{background:#226247}.mention-bar{background:#8eac9a}.mention-track{border-color:#d6e4da;background:repeating-linear-gradient(to top,transparent 0 25px,#e1ebe4 25px 26px)}
+.mention-example{margin-top:12px;padding:9px 11px;background:#edf4ef;border-radius:6px;font-size:.81rem;color:var(--muted)}.mention-example strong{display:inline;font-size:inherit;letter-spacing:normal}
+.prompt .eyebrow{color:#a8ceb5}.prompt-preview{background:#10251c;border-color:#496b58}
+.agent{background:#172a23;color:#ffffff;border-radius:12px;padding:22px;min-width:0}
+.agent-header,.report-launch{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.agent .eyebrow{color:#b3d8c0}.agent-status{color:#c7ddcf;font-size:.76rem}
+.thread{display:grid;gap:12px;margin:18px 0}.bubble{justify-self:end;background:#314c3f;border-radius:8px;padding:9px 12px;max-width:90%;overflow-wrap:anywhere}
+.agent-reply{background:#23392e;border:1px solid #425e50;border-radius:8px;padding:12px}
+.agent .highlight{background:none;color:inherit;margin:0;padding:0}
+.composer{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}.composer input{background:#ffffff;color:var(--ink);min-width:0}
+.agent-suggestions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.agent-suggestions button{border:1px solid #547364;background:none;color:#ffffff;border-radius:6px;padding:6px 9px;min-height:44px;text-align:left;font-size:.82rem}
+.report-options{margin:14px 0;border:1px solid var(--line);border-radius:8px}
+.report-options label{display:flex;align-items:center;gap:8px;min-height:35px;margin:0}
+.report-options input{width:auto;accent-color:#226247}
+.report-view{width:min(780px,calc(100% - 24px));background:#edf4ef}
+.report-paper{background:#ffffff;border:1px solid var(--line);margin-top:14px;padding:clamp(16px,4vw,38px);border-radius:5px}
+.report-paper h2{font-size:clamp(1.65rem,4vw,2.6rem);overflow-wrap:anywhere}
+.report-paper section{border-top:1px solid var(--line);margin-top:17px;padding-top:13px}
+.report-paper section p{margin-top:5px}
+@media(max-width:760px){.hero{padding-block:24px}.agent{padding:15px}.report-launch{align-items:flex-start;flex-direction:column}}
+
+.report-link{font-weight:700;color:var(--green);text-underline-offset:3px}
+.report-section{margin:14px 0 0!important}
+.report-section>h2{font-size:clamp(1.65rem,4vw,2.4rem)}
+.report-window{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:16px;background:#edf4ef}
+.report-toolbar{background:#172a23;color:white;padding:13px 18px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.report-toolbar span{font-size:.78rem;color:#c7ddcf}
+.report-workspace{display:grid;grid-template-columns:156px minmax(0,1fr);padding:16px;gap:16px}
+.report-workspace nav{display:grid;align-content:start;gap:4px;font-size:.8rem}
+.report-workspace nav a{padding:8px;border-radius:5px;text-decoration:none}
+.report-workspace nav a:hover{background:#dcece1}
+.report-paper{margin:0}.report-paper h3{font-size:clamp(1.25rem,3vw,1.9rem)}
+.report-paper>p:not(.eyebrow){margin-top:10px}
+.report-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:16px 0}
+.report-kpis div{background:#edf4ef;padding:8px;border-radius:6px}
+.report-kpis dt{font-size:.73rem;color:var(--muted)}
+.report-kpis dd{margin:0;font-size:1.25rem;font-weight:750}
+.report-paper h4{margin:0}
+.report-actions{margin:8px 0 0;padding-left:22px}
+.report-actions li+li{margin-top:6px}
+.report-actions span{display:block;color:var(--muted);font-size:.86rem}
+.card.prompt{background:#172a23;color:#fff}
+.prompt .desc,.prompt .foot{color:#d5e9dc}
+.prompt .eyebrow{color:#acd4b9}
+.prompt .prompt-preview{color:#f2fff5;background:#10251c;border-color:#496b58}
+.agent{max-width:900px;width:100%;justify-self:center;padding:0;overflow:hidden}
+.agent-header{padding:14px 20px;border-bottom:1px solid #425e50}
+.agent-header h3{font-size:1.07rem}
+.agent .thread{padding:0 20px;gap:15px}
+.agent-speaker{color:#b3d8c0;font-size:.78rem;font-weight:700;margin-bottom:7px}
+.agent .composer{margin:0 20px;padding:5px;background:#23392e;border:1px solid #547364;border-radius:10px}
+.agent .composer input{border:0;background:transparent;color:white}
+.agent .composer input::placeholder{color:#c0d5c8}
+.agent .agent-suggestions{margin:8px 20px 16px}
+.agent-suggestions button{border:0;padding-inline:5px;color:#d5e9dc;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:650px){.report-workspace{grid-template-columns:1fr;padding:9px;gap:6px}.report-workspace nav{display:flex;flex-wrap:wrap}.report-paper{padding:12px}.agent-header{padding:12px}.agent .thread{padding:0 12px}.agent .composer,.agent .agent-suggestions{margin-inline:12px}}
+
+.wrap{width:min(1080px,calc(100% - 56px))}
+body{background:#f8faf8}
+.masthead,.hero{background:#fcfdfb}
+.masthead .wrap{min-height:62px}
+.hero{border-bottom:1px solid var(--line);padding-block:46px}
+.hero h1{font-weight:680}
+.hero-score{background:transparent;border:0;border-left:1px solid var(--line);border-radius:0;padding:10px 0 10px 30px}
+.results{padding-top:24px}
+.card{border-radius:10px}
+.findings-head{padding-bottom:13px;border-bottom:1px solid var(--line);margin-top:38px}
+.feature-intro{text-align:center;max-width:620px;margin:0 auto 22px}
+.feature-intro h2{font-size:clamp(1.85rem,4.2vw,3rem);font-weight:650;letter-spacing:-.045em}
+.feature-intro h2 span{color:var(--green)}
+.feature-intro>p:last-child{max-width:480px;margin:12px auto 0;color:var(--muted)}
+.assistant-intro{margin-top:34px;margin-bottom:4px}
+.report-section{margin:48px 0 34px!important}
+.report-window{max-width:900px;margin:0 auto;background:#edf2ee;box-shadow:0 18px 40px -28px #234b35}
+.report-toolbar{padding:12px 20px}
+.report-toolbar .report-wordmark{font-size:1.28rem;font-weight:750;letter-spacing:-.065em;color:white}
+.report-toolbar .report-preview-label{border:1px solid #567365;border-radius:5px;padding:2px 7px}
+.report-workspace{padding:0;gap:0;grid-template-columns:158px minmax(0,1fr)}
+.report-workspace nav{padding:18px 10px;border-right:1px solid var(--line)}
+.report-workspace nav p{padding:0 8px 5px;color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em}
+.report-paper{margin:18px;border:1px solid #e0e8e1;border-radius:4px;padding:clamp(18px,4vw,36px);background:white}
+.report-mast{display:flex;justify-content:space-between;flex-wrap:wrap;gap:5px 10px;color:var(--muted);font-size:.72rem;padding-bottom:10px;margin-bottom:15px;border-bottom:1px solid var(--line)}
+.report-paper h3{font-weight:670;letter-spacing:-.035em}
+.report-lede{font-size:.94rem}
+.report-insight{background:#eef5ef;border-left:3px solid #568369;padding:9px 12px;margin:12px 0 18px;font-size:.84rem}
+.report-snapshot{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 18px}
+.report-kpis{margin:0;display:grid;grid-template-columns:1fr;gap:0;border:1px solid var(--line);border-radius:6px}
+.report-kpis div{display:flex;align-items:center;justify-content:space-between;gap:4px;background:none;border-radius:0;padding:5px 9px}
+.report-kpis div+div{border-top:1px solid var(--line)}
+.report-kpis dd{font-size:.95rem;white-space:nowrap}
+.report-compare{border:1px solid var(--line);border-radius:6px;padding:7px 9px;font-size:.74rem}
+.report-compare p{font-weight:650;margin-bottom:4px}
+.report-compare div{display:grid;grid-template-columns:1fr auto;gap:1px 4px;margin-top:5px}
+.report-compare i{grid-column:1/-1;height:4px;border-radius:4px;background:linear-gradient(to right,#477c5e var(--value),#e9f0eb var(--value))}
+.report-actions li{padding-bottom:5px;border-bottom:1px solid var(--line)}
+.agent{box-shadow:0 18px 40px -28px #234b35}
+.agent-reply{font-size:.92rem}
+.card.prompt{margin-top:0}
+@media(max-width:760px){.wrap{width:calc(100% - 28px)}.hero{padding-block:24px}.hero-score{border-left:0;border-top:1px solid var(--line);padding:12px 0 0}.hero-score strong{font-size:3rem}}
+@media(max-width:650px){.report-workspace{grid-template-columns:1fr}.report-workspace nav{border-right:0;border-bottom:1px solid var(--line);padding:4px 7px;gap:0}.report-workspace nav p{display:none}.report-workspace nav a{font-size:.73rem;padding:7px 5px}.report-paper{margin:8px;padding:12px}.report-snapshot{gap:6px}.report-section{margin-top:34px!important}}
+@media(max-width:355px){.report-snapshot{grid-template-columns:1fr}}
+
+.help-intro{margin:40px auto 18px}
+.evidence-section{display:grid;gap:12px;margin-bottom:0!important}
+.evidence-intro{border-top:1px solid var(--line);padding-top:18px;margin-top:10px}
+.evidence-intro h2{font-size:clamp(1.35rem,3.4vw,1.9rem)}
+.answer-evidence{padding:15px 18px;background:#edf4ef;border-left:3px solid #568369;border-radius:5px}
+.answer-evidence blockquote{margin:8px 0;color:var(--muted)}
+.answer-evidence .badge{background:white;margin-top:4px}
+.assistant-intro{margin-top:0}
+@media(max-width:650px){.help-intro{margin-top:28px}.answer-evidence{padding:12px}}
+
+body{background:#f8faf8;color:#202b25}
+.results{padding-top:0}
+section.audit-lead{margin:0 0 44px}
+.audit-heading{padding:44px 0 22px;max-width:780px}
+.audit-heading h1{font-size:clamp(2.2rem,5.8vw,4.5rem);font-weight:670;letter-spacing:-.065em;line-height:1.03}
+.audit-heading>p:not(.eyebrow){margin-top:14px;max-width:590px;color:var(--muted);font-size:1.03rem}
+.audit-scope{display:flex;flex-wrap:wrap;gap:7px 16px;list-style:none;padding:0;margin:14px 0 0;color:var(--muted);font-size:.8rem}
+.audit-scope li+li::before{content:"·";margin-right:12px}
+.audit-brief{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--line)}
+.brief-panel{min-width:0;background:white;padding:0 16px 13px}
+.brief-panel header{display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:48px;border-bottom:1px solid var(--line)}
+.brief-panel h2,.audit-observation h2{font-size:1rem;letter-spacing:-.02em}
+.brief-panel header span,.brief-score>span,.brief-topic>span,.compare-scale{font-size:.76rem;color:var(--muted)}
+.brief-score,.brief-topic{height:75px;display:flex;align-items:center;gap:12px}
+.brief-score b{font-size:2.8rem;font-weight:650;letter-spacing:-.07em;color:#205b43}
+.brief-topic{display:grid;align-content:center;gap:2px}
+.brief-topic p{font-weight:650}
+.compare-scale{display:flex;justify-content:space-between;margin:0 43px 3px 130px;font-variant-numeric:tabular-nums}
+.audit-chart{padding:0;margin:0;list-style:none;display:grid;gap:5px;font-size:.8rem}
+.audit-chart li{display:grid;grid-template-columns:124px minmax(0,1fr) 37px;align-items:center;gap:6px;min-height:25px}
+.audit-chart li>b{text-align:right;font-variant-numeric:tabular-nums}
+.audit-chart .animated-bar{grid-column:auto;height:7px;background:#ebf0eb}
+.audit-chart .animated-bar i{background:#8ba896}
+.audit-chart .audit-own{color:#205b43;font-weight:750}
+.audit-chart .audit-own i{background:#226247}
+.brief-note{margin-top:10px;padding-top:9px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+.audit-observation{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:start;margin-top:12px;padding:15px;background:#eaf3ec;border-radius:8px}
+.audit-observation>span{font-size:.71rem;font-weight:750;color:#205b43;text-transform:uppercase;letter-spacing:.055em}
+.audit-observation p{margin-top:3px;font-size:.84rem;color:var(--muted)}
+.audit-observation a{font-size:.82rem;font-weight:700;color:#205b43;text-underline-offset:3px}
+.help-intro{margin-top:0;padding-top:26px;border-top:1px solid var(--line)}
+.answer-open{margin-top:5px}
+@media(max-width:700px){.audit-heading{padding-top:26px}.audit-brief{grid-template-columns:1fr}.brief-panel{padding-inline:12px}.audit-observation{grid-template-columns:1fr;gap:5px}.audit-chart li{grid-template-columns:105px minmax(0,1fr) 37px}.compare-scale{margin-left:111px}.audit-heading br{display:none}}
+
+:root{--ink:#252720;--muted:#575b50;--green:#535f37;--line:#e3e5dc;--paper:#fafaf7;--dark:#282c22}
+body{background:var(--paper);color:var(--ink)}
+.masthead{background:#fdfdfa}
+.logo span,.eyebrow,.report-link{color:var(--green)}
+.audit-lead{display:flex;flex-direction:column;position:relative}
+.audit-heading{max-width:none;text-align:center;padding:62px 16px 37px;position:relative;isolation:isolate}
+.audit-heading::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle,#b7bda4 0.65px,transparent 0.85px) 0 0/7px 7px;opacity:.5;mask-image:radial-gradient(ellipse at center,transparent 27%,black 49%,transparent 77%);pointer-events:none}
+.audit-heading h1{max-width:none;font-size:clamp(2.05rem,5.7vw,4.25rem);font-weight:650}
+.audit-heading h1 span{color:var(--green)}
+.audit-heading>p:not(.eyebrow){margin:15px auto 0}
+.audit-scope{justify-content:center}
+.audit-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--line)}
+.audit-nav a{padding:11px 18px;font-size:.8rem;text-decoration:none;min-height:44px;color:var(--muted)}
+.audit-nav a:hover{background:#eef0e7;color:var(--ink)}
+.audit-frame{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff;box-shadow:0 22px 52px -38px #444d34}
+.frame-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:#f3f4ee;border-bottom:1px solid var(--line);font-size:.78rem}
+.frame-toolbar strong{color:#313724}
+.frame-toolbar span{color:var(--muted)}
+.audit-brief{border:0;border-radius:0}
+.brief-panel{padding-inline:18px}
+.compare-scale{font-size:.65rem}
+.audit-chart .animated-bar{background:repeating-linear-gradient(to right,#edf0e7 0, #edf0e7 calc(25% - 1px),#dce1d4 calc(25% - 1px),#dce1d4 25%);border-radius:2px;height:8px}
+.audit-chart .animated-bar i{background:#a5af92;border-radius:2px}
+.audit-chart .audit-own,.brief-score b,.audit-observation a,.audit-observation>span{color:#4d5932}
+.audit-chart .audit-own i{background:#58673c}
+.topic-chart .animated-bar{overflow:visible;background:linear-gradient(to right,#e1e5d9,#e1e5d9) center/100% 1px no-repeat}
+.topic-chart .animated-bar i{position:relative;background:transparent}
+.topic-chart .animated-bar i::after{content:"";position:absolute;right:-4px;top:0;width:8px;height:8px;border-radius:50%;background:#788663}
+.topic-chart .audit-own i::after{background:#48572f;box-shadow:0 0 0 3px #e0e8d5}
+.audit-observation,.answer-evidence{background:#eef0e7}
+.answer-evidence,.report-insight{border-left-color:#788663}
+.card,dialog{border-color:var(--line)}
+.cta,.cta:hover{background:#535f37;color:white}
+.cta:hover{background:#424c2c}
+.donut{position:relative;background:conic-gradient(#535f37 0 15.1%,#74805b 15.1% 41.7%,#919d7c 41.7% 67.4%,#b3bda1 67.4% 85.8%,#dce1d0 85.8%)}
+.donut span{position:absolute;display:grid;text-align:center;line-height:1.2}
+.metric .donut b{font-size:1.5rem;letter-spacing:-.045em}.donut small{color:var(--muted)}
+.mention-column:first-child .mention-bar{background:#535f37}.mention-bar{background:#a5af92}
+.ring-value{stroke:#69784c}.ring-track{stroke:#e4e8db}
+.report-window{background:#f0f1eb;border-color:var(--line)}
+.report-toolbar,.agent-header{background:#edeee6;color:#282c22;border-bottom:1px solid var(--line)}
+.report-toolbar .report-wordmark,.report-toolbar .report-preview-label,.agent-status{color:#414938}
+.report-toolbar .report-wordmark small{font-size:.74rem;font-weight:500;letter-spacing:normal;margin-left:8px}
+.report-toolbar .report-preview-label{border-color:#c9cfbe}
+.report-insight,.report-kpis div{background:#f2f4ed}
+.report-compare i{background:linear-gradient(to right,#6b7950 var(--value),#edf0e7 var(--value))}
+.agent{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.agent-mark{display:inline-grid;place-items:center;background:#dfe5d4;color:#4c5834;border-radius:5px;width:26px;height:26px;margin-right:4px}
+.bubble{background:#eef0e7;color:var(--ink)}
+.agent-speaker{color:#535f37}
+.agent-reply{background:#f9faf6;border-color:var(--line)}
+.agent .composer{background:#fff;border-color:#cbd2c1}
+.agent .composer input{color:var(--ink)}.agent .composer input::placeholder{color:#64695a}
+.agent .agent-suggestions button{color:#475337}
+.card.prompt{background:#303629;color:#fff}
+.prompt .prompt-preview{background:#242a20;color:#f3f5ee;border-color:#5b6550}
+.prompt .desc,.prompt .foot{color:#e0e5d7}.prompt .eyebrow{color:#dce7c7}
+@media(max-width:700px){.audit-heading{padding:30px 0 24px}.audit-nav a{padding-inline:8px}.audit-heading h1 span{display:block}.frame-toolbar,.brief-panel{padding-inline:10px}.compare-scale{font-size:.60rem}}
+
+
+body,input,textarea,button{font-family:"Geist",ui-sans-serif,system-ui,sans-serif}
+h1,h2,h3,h4,.logo,.brief-score b,.metric strong{font-family:"Geist",ui-sans-serif,system-ui,sans-serif}
+.audit-heading{padding-top:54px;padding-bottom:32px}
+.audit-heading h1{letter-spacing:-.05em}
+.brief-panel header{min-height:58px}
+.brief-panel h2{line-height:1.3}
+.brief-topic{height:auto;min-height:75px;padding-block:10px}
+.brief-topic span{line-height:1.45}
+.answer-evidence{background:white;border:1px solid #dfe5da;border-radius:12px;padding:22px}
+.question-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;color:#718068}
+.answer-evidence h3{font-size:1.05rem;font-weight:600;margin:8px 0 18px;max-width:620px}
+.sample-answer{display:grid;grid-template-columns:34px 1fr;gap:12px;padding-top:16px;border-top:1px solid var(--line)}
+.answer-avatar{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#e8eee3;color:#52643f}
+.sample-answer p{margin:6px 0 10px;color:var(--muted);line-height:1.65}
+.sample-answer mark{background:#e8f0df;color:#344d29;border-radius:3px;padding:1px 3px}
+.sample-answer .text-button{border:0;padding:0;text-decoration:underline;text-underline-offset:4px;color:#52643f}
+.report-section{margin-top:64px!important}
+.report-window{max-width:950px;border:1px solid #dfe4df;border-radius:16px;box-shadow:0 30px 70px -42px #485b49;background:#f5f6f3}
+.report-toolbar{min-height:54px;padding-inline:22px;background:white}
+.report-workspace{grid-template-columns:170px minmax(0,1fr)}
+.report-workspace nav{background:#fafbf9;padding:25px 12px}
+.report-workspace nav a{padding:10px;border-radius:6px;color:#646e64}
+.report-workspace nav a:first-of-type{background:#eaf0e8;color:#344834;font-weight:700}
+.report-paper{margin:24px auto;width:min(660px,calc(100% - 32px));padding:clamp(22px,4vw,44px);box-shadow:0 5px 18px #283b2710}
+.report-mast{padding-bottom:15px;margin-bottom:24px}
+.report-paper h3{font-size:clamp(1.5rem,3vw,2.15rem)}
+.report-lede{max-width:530px;line-height:1.7}
+.report-insight{border:0;border-radius:8px;padding:14px 16px;margin:20px 0 26px}
+.report-snapshot{margin:12px 0 26px}
+.report-kpis,.report-compare{border-radius:9px}
+.report-actions{list-style:none;padding:0;counter-reset:report}
+.report-actions li{counter-increment:report;position:relative;padding:10px 0 10px 34px}
+.report-actions li::before{content:counter(report,decimal-leading-zero);position:absolute;left:0;top:11px;font-size:.7rem;color:#718068}
+.assistant-intro{margin-top:48px}
+.agent{background:#fff;border:1px solid #e2e7e1;border-radius:16px;box-shadow:0 20px 60px -45px #233d2c;padding:0}
+.agent-header{background:white;padding:16px 22px}
+.agent .thread{max-width:680px;margin:28px auto;padding:0 22px;min-height:180px}
+.bubble{border-radius:20px 20px 4px 20px;padding:12px 17px;background:#f0f3ee}
+.agent-reply{border:0;background:transparent;padding:0}
+.agent .composer{max-width:680px;margin:0 auto;padding:8px 10px;background:white;border:1px solid #cfd8cc;border-radius:18px;box-shadow:0 4px 16px #2f4a3012}
+.agent .composer .cta{border-radius:50%;width:42px;height:42px;min-height:42px}
+.agent .agent-suggestions{max-width:680px;margin:8px auto 22px}
+.agent-suggestions button{color:#56684e;font-size:.78rem}
+@media(max-width:700px){.audit-heading{padding:32px 0 24px}.audit-heading h1{font-size:2rem}.report-workspace{grid-template-columns:1fr}.report-workspace nav{padding:6px 8px}.report-paper{margin:8px auto 12px;width:calc(100% - 16px);padding:16px}.agent .thread{padding:0 15px}.agent .composer,.agent .agent-suggestions{margin-left:12px;margin-right:12px}.answer-evidence{padding:16px}}
+
+.section-divider{padding:48px 0 12px;border-top:1px solid #e1e5dd}
+.section-divider h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:650}
+.section-divider p:last-child{margin-top:8px;color:#5b655a;max-width:570px}
+.help-divider{margin-top:52px}
+.evidence-intro{border:0;margin:0;padding-top:4px}
+.report-workspace{display:block;padding:20px;background:#eef1eb}
+.report-paper{margin:0 auto;width:min(760px,100%);padding:clamp(24px,5vw,56px);background:white;border:0;box-shadow:0 14px 36px #273a2714}
+.report-toolbar{padding:14px 22px}
+.report-paper h3{font-size:clamp(1.8rem,3.8vw,2.5rem);margin-bottom:12px}
+.report-mast{margin-bottom:28px}
+.report-lede{font-size:1rem;line-height:1.75}
+.report-insight{padding:15px 18px}
+.report-kpis{grid-template-columns:repeat(3,1fr)}
+.report-kpis div{display:block;padding:12px}
+.report-kpis div+div{border-top:0;border-left:1px solid var(--line)}
+.report-kpis dd{font-size:1.35rem;margin-top:4px}
+.report-snapshot{grid-template-columns:1fr}
+.report-compare{padding:14px}
+.agent{max-width:900px}
+.agent-header{border-bottom:1px solid #ecefeb}
+.agent .thread{font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.65;max-width:720px;margin:32px auto 28px}
+.agent .thread h3,.agent .thread p,.agent .thread li{font-family:inherit;font-size:inherit}
+.agent .thread .highlight>p+p{margin-top:14px}
+.agent .thread .action-steps{margin-top:10px;padding-left:23px}
+.agent .thread .action-steps li+li{margin-top:12px}
+.agent-speaker{font-size:.85rem!important}
+.bubble{background:#f1f3f0;color:#202623}
+@media(max-width:650px){.section-divider{padding-top:28px}.help-divider{margin-top:30px}.report-workspace{padding:8px}.report-paper{width:100%;padding:20px}.report-kpis{grid-template-columns:1fr}.report-kpis div{display:flex}.report-kpis div+div{border-left:0;border-top:1px solid var(--line)}}
+
+.section-divider{text-align:center;padding:72px 0 28px}
+.section-divider p:last-child{margin:10px auto 0}
+.evidence-section{gap:22px}
+.evidence-intro{text-align:center;max-width:620px;margin:0 auto;padding:0}
+.evidence-intro .desc{margin-top:10px}
+.stack{gap:28px}
+.evidence-section .card,.score-layout{margin-top:0}
+.brief-panel{padding:0 22px 20px}
+.audit-brief{gap:1px}
+.brief-note{line-height:1.55;min-height:55px}
+.brief-note strong{color:#30392a}
+.report-section{margin:64px auto!important}
+.report-window{max-width:760px}
+.report-workspace{padding:16px}
+.report-paper{padding:clamp(20px,4vw,36px)}
+.report-paper h3{font-size:clamp(1.45rem,3vw,2rem)}
+.report-paper h4{margin-top:18px}
+.report-locked{position:relative;margin-top:20px;border:1px solid var(--line);border-radius:10px;overflow:hidden;min-height:220px}
+.report-blur{padding:14px 18px;filter:blur(4px);opacity:.55;pointer-events:none;user-select:none}
+.report-gate{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(255,255,255,.74);padding:16px}
+.report-gate span{font-size:.67rem;letter-spacing:.12em;color:#64705b;font-weight:700}
+.report-gate strong{font-size:1rem;margin:5px 0}
+.report-gate p{font-size:.8rem;color:var(--muted);margin-bottom:10px}
+.agent{margin-bottom:48px}
+.card.prompt{margin:48px 0 36px}
+@media(max-width:700px){.section-divider{padding:40px 0 20px}.brief-panel{padding:0 14px 16px}.report-section{margin:42px auto!important}.agent{margin-bottom:32px}.card.prompt{margin:32px 0}}
+
+section.audit-lead{margin-bottom:18px}
+.section-divider{padding:25px 0 14px}
+.evidence-intro{padding-top:10px}
+.evidence-section{gap:14px}
+.analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0}
+.voice-layout{display:grid;grid-template-columns:165px 1fr;align-items:center;gap:12px;margin-top:10px}
+.voice-layout .donut{width:148px;height:148px;margin:0 auto}
+.voice-key{padding:0;margin:0;list-style:none;font-size:.79rem}
+.voice-key li{display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:1px solid #eef1ea}
+.voice-key li b{margin-left:auto;font-variant-numeric:tabular-nums}
+.voice-key i{width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}
+.position-vis{margin-top:30px}
+.position-vis>div:not(.position-axis){position:relative;display:grid;grid-template-columns:100px 1fr auto;gap:8px;align-items:center;min-height:42px;border-bottom:1px solid #eff1eb;font-size:.85rem}
+.position-vis>div>b{grid-column:3;font-variant-numeric:tabular-nums}
+.position-vis>div>i{grid-column:2;grid-row:1;height:5px;border-radius:5px;background:linear-gradient(to right,#788663 var(--pos),#eef1ea var(--pos))}
+.position-axis{display:flex;justify-content:space-between;margin:7px 30px 0 108px;font-size:.7rem;color:#687365}
+.position-own span,.position-own b{font-weight:700;color:#4d5932}
+.report-section{margin:26px auto!important}
+.feature-intro{margin-bottom:16px}
+.report-window{max-width:850px;background:#f0f2ed}
+.report-workspace{padding:14px}
+.report-paper{width:min(720px,100%);padding:clamp(22px,4vw,42px)}
+.report-mast{font-size:.65rem;letter-spacing:.08em}
+.report-insight{display:block;background:#f0f3e9;border-left:3px solid #68754a;border-radius:0}
+.report-snapshot{grid-template-columns:1fr 1fr}
+.report-kpis{display:grid;grid-template-columns:1fr}
+.report-kpis div{display:flex}
+.report-kpis div+div{border-left:0;border-top:1px solid var(--line)}
+.report-locked{min-height:250px}
+.ghost-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:8px;border-bottom:1px solid #e5eae2;font-size:.75rem}
+.assistant-intro{margin-top:24px}
+@media(max-width:700px){.analysis-grid{grid-template-columns:1fr}.voice-layout{grid-template-columns:145px 1fr}.voice-layout .donut{width:130px;height:130px}.report-section{margin:20px auto!important}.report-snapshot{grid-template-columns:1fr}.report-workspace{padding:7px}.section-divider{padding:18px 0}}
+@media(max-width:340px){.voice-layout{grid-template-columns:1fr}.voice-key{max-width:240px;width:100%;margin:auto}}
+
+.audit-brief{align-items:stretch}
+.brief-panel{display:flex;flex-direction:column;padding:0 24px 24px}
+.brief-panel header{min-height:64px}
+.brief-score,.brief-topic{min-height:90px;height:auto;padding:16px 0}
+.audit-chart{gap:0}
+.audit-chart li{min-height:34px}
+.brief-note{margin-top:auto;padding-top:14px;min-height:74px}
+.report-section{max-width:1000px}
+.report-window{max-width:100%;box-shadow:0 20px 45px -36px #384c38}
+.report-dashboard{padding:20px 24px 24px;background:#fff;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);gap:18px 26px}
+.report-summary{align-self:center}
+.report-summary h3{font-size:1.35rem;letter-spacing:-.03em;margin:7px 0}
+.report-summary p:last-child{color:var(--muted);font-size:.86rem;line-height:1.55}
+.report-data{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.report-kpi{background:#f3f5ef;border:1px solid #e5e9df;border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:3px}
+.report-kpi span,.report-kpi small{color:var(--muted);font-size:.7rem}
+.report-kpi strong{font-size:1.35rem;line-height:1.2;color:#40502f}
+.report-lower{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);gap:12px}
+.report-priority{background:#f5f7f2;border:1px solid var(--line);border-radius:8px;padding:16px}
+.report-label{font-size:.65rem;letter-spacing:.1em;color:#68735c;font-weight:700}
+.report-priority h4{margin:8px 0 3px}.report-priority p{font-size:.8rem;color:var(--muted);line-height:1.5}
+.report-tag{display:inline-block;font-size:.7rem;color:#53613c;background:#e8eee1;border-radius:4px;padding:4px 7px;margin-top:12px}
+.report-locked{margin:0;min-height:160px}
+.report-gate p{margin:0}
+@media(max-width:700px){.brief-panel{padding:0 16px 18px}.brief-panel header{min-height:58px}.brief-score,.brief-topic{min-height:78px}.brief-note{min-height:0;margin-top:12px}.report-dashboard{grid-template-columns:1fr;padding:15px;gap:12px}.report-lower{grid-column:auto;grid-template-columns:1fr}.report-data{gap:5px}.report-kpi{padding:8px}.report-kpi strong{font-size:1.15rem}}
+
+.voice-card .desc{margin-top:14px}
+.voice-card .voice-layout{flex:1;margin:12px 0 0}
+.voice-card .voice-key li{min-height:31px}
+.report-chart{grid-column:1/-1;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.report-chart-head{display:flex;align-items:start;justify-content:space-between;gap:12px}
+.report-chart-head h4{font-size:.86rem;margin:0}
+.report-chart-head p,.report-chart-head>span{font-size:.7rem;color:var(--muted)}
+.report-chart-bars{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;height:125px;margin-top:10px;background:repeating-linear-gradient(to top,transparent 0,transparent 24px,#eef1eb 24px,#eef1eb 25px)}
+.report-chart-bars>div{position:relative;display:flex;align-items:end;justify-content:center;min-width:0;padding-bottom:23px}
+.report-chart-bars i{width:min(48px,75%);height:var(--bar-height);background:#a9b69a;border-radius:4px 4px 0 0}
+.report-chart-bars b{position:absolute;bottom:calc(var(--bar-height) * .816 + 25px);font-size:.65rem;color:#4b5746}
+.report-chart-bars span{position:absolute;bottom:2px;font-size:.66rem;white-space:nowrap;color:var(--muted)}
+.report-chart-bars .report-chart-own i{background:#535f37}
+.report-chart-bars .report-chart-own span{font-weight:700;color:#40502f}
+@media(max-width:700px){.voice-card .voice-layout{margin-top:16px}.report-chart{grid-column:auto}.report-chart-bars{gap:4px}.report-chart-bars span{font-size:.57rem}}
+
+.sentiment-intro{margin:20px auto 4px}
+.sentiment-card{margin-top:0}
+.report-dashboard{display:grid;grid-template-columns:1fr;gap:12px;background:#f7f8f5;padding:16px}
+.report-summary{padding:5px 3px}
+.report-summary h3{margin:5px 0;font-size:1.3rem}
+.report-viz{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.report-viz-card,.report-line-card{background:white;border:1px solid #e3e8df;border-radius:9px;padding:14px;min-width:0}
+.report-viz-card h4,.report-line-card h4{font-size:.85rem;margin:0}
+.report-viz-card p{font-size:.7rem;color:#626e5e;text-align:center;margin-top:8px}
+.report-ring{width:112px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;margin:12px auto;background:conic-gradient(#53643b 0 30%,#e9eee4 30% 100%)}
+.report-voice{background:conic-gradient(#53643b 0 15.1%,#82916d 15.1% 41.7%,#a6b397 41.7% 67.4%,#c5d0bd 67.4% 85.8%,#e5ebdf 85.8%)}
+.report-ring>div{width:75%;height:75%;background:white;border-radius:50%;display:grid;place-content:center;text-align:center;line-height:1.2}
+.report-ring strong{font-size:1.2rem}.report-ring small{font-size:.62rem;color:#687364}
+.report-line-card svg{display:block;width:100%;height:auto;margin-top:10px}
+.report-line-legend{display:flex;gap:15px;font-size:.68rem;color:#687364}
+.report-line-legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.report-lower{grid-column:auto}
+@media(max-width:700px){.report-dashboard{padding:10px;gap:8px}.report-ring{width:90px}.report-viz-card,.report-line-card{padding:10px}.sentiment-intro{margin-top:14px}}
+
+dialog input,dialog textarea{background:#fff;color:#202b25;color-scheme:light;border-color:#b9c5ba}
+.feature-intro h2,.evidence-intro h2{font-size:clamp(1.7rem,3.5vw,2.5rem);line-height:1.15}
+.feature-intro{max-width:700px}
+.voice-layout{grid-template-columns:minmax(175px,1fr) minmax(125px,1fr)}
+.voice-layout .donut{width:min(205px,100%);height:auto;aspect-ratio:1}
+.trend-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px}
+.trend-head,.h2h-head{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.trend-total{display:block;font-size:1.7rem;line-height:1.2;margin:18px 0 2px}
+.trend-total small{font-size:.75rem;color:var(--muted);font-weight:400}
+.trend-card svg{display:block;width:100%;height:auto;margin:12px 0 4px;overflow:visible}
+.trend-gridlines{fill:none;stroke:#e7ebe3;stroke-width:1}
+.axis-labels{fill:#738071;font-size:11px;font-family:"Geist",ui-sans-serif,system-ui,sans-serif}
+.x-axis{text-anchor:middle}
+.trend-path{fill:none;stroke:#64794a;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0}
+.trend-dots{fill:#64794a}
+.animate .trend-path{animation:trace-trend 1.1s ease-out both}
+@keyframes trace-trend{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.comparison-intro{margin:22px auto 4px}
+.h2h-head label{font-size:.73rem;color:var(--muted);display:grid;gap:3px}
+.h2h-head select{background:white;color:var(--ink);border:1px solid var(--line);padding:8px;border-radius:7px;min-height:42px;font:inherit;font-size:.85rem}
+.h2h-pair{display:grid;grid-template-columns:1fr 1fr;margin-top:18px}
+.h2h-pair>div{display:grid}.h2h-pair>div+div{text-align:right}
+.h2h-pair span{font-size:.82rem;color:var(--muted)}
+.h2h-pair strong{font-size:2rem;font-weight:650}
+.h2h-summary{margin:8px 0 12px}
+.h2h-bar{display:flex;height:18px;background:#dbe2d2;border-radius:100px;overflow:hidden}
+.h2h-bar span:first-child{background:#586a3e;transition:width .65s ease}.h2h-bar span:last-child{flex:1;background:#9aa98b}
+.h2h-known{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:15px}
+.h2h-known>div+div{text-align:right}
+.h2h-known h4{font-size:.8rem;margin:0 0 8px}
+.h2h-tag{display:table;padding:5px 8px;margin:5px 0;border-radius:6px;font-size:.76rem}
+.h2h-known>div+div .h2h-tag{margin-left:auto}
+.h2h-tag.good{background:#edf5eb;color:#28553a;border:1px solid #d8e9d4}
+.h2h-tag.weak{background:#fff2ef;color:#943b30;border:1px solid #f1d5ce}
+.h2h-footer{border-top:1px solid var(--line);padding-top:10px;margin-top:14px}
+@media(max-width:700px){.trend-grid{grid-template-columns:1fr}.voice-layout{grid-template-columns:minmax(125px,1fr) minmax(125px,1fr)}.voice-layout .donut{width:min(175px,100%)}.h2h-head{align-items:start}.h2h-known{gap:8px}.h2h-tag{font-size:.7rem}.feature-intro h2,.evidence-intro h2{font-size:1.7rem}}
+@media(prefers-reduced-motion:reduce){.animate .trend-path{animation:none}.h2h-bar span:first-child{transition:none}}
+
+/* Shared surfaces and typography */
+.audit-frame{background:transparent;border:0;border-radius:0;overflow:visible;box-shadow:none}
+.frame-toolbar{border:1px solid var(--line);border-bottom:0;border-radius:10px 10px 0 0}
+.audit-brief{gap:16px;background:transparent;overflow:visible}
+.brief-panel,.trend-card{background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 26px -24px #34462f}
+.brief-panel{padding:0 22px 22px}
+.trend-grid{gap:16px;margin-top:16px}
+.trend-card{padding:22px}
+.brief-panel h2,.trend-card h3,.sentiment-card h3,.head-to-head h3,.evidence-section .card h3{font-size:1.05rem;line-height:1.35;letter-spacing:-.02em}
+.feature-intro h2,.evidence-intro h2{font-size:clamp(1.7rem,3.5vw,2.5rem);line-height:1.15}
+.report-full-lock{grid-column:1/-1;min-height:200px}
+.report-lock-content{display:grid;grid-template-columns:1fr 1.5fr;gap:14px;padding:14px;filter:blur(5px);opacity:.6}
+.report-lock-table{padding:0 10px}
+.report-lock-table h4{margin:5px 0}
+@media(max-width:700px){.audit-brief{gap:12px}.frame-toolbar{border-bottom:1px solid var(--line);border-radius:10px;margin-bottom:12px}.brief-panel,.trend-card{padding:0 16px 18px}.trend-card{padding:18px 16px}.trend-grid{gap:12px;margin-top:12px}.feature-intro h2,.evidence-intro h2{font-size:1.7rem}.report-lock-content{grid-template-columns:1fr;gap:8px}.report-full-lock{min-height:220px}}
+
+@media(min-width:701px){
+  .report-section{max-width:none}
+  .report-window{max-width:100%}
+  .report-dashboard{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);align-items:stretch}
+  .report-summary{grid-column:1/-1}
+  .report-viz{grid-column:1}
+  .report-line-card{grid-column:2;grid-row:2}
+  .report-full-lock{grid-column:1/-1}
+  .report-line-card svg{max-height:155px}
+}
+@media(max-width:700px){
+  .report-dashboard{grid-template-columns:1fr}
+  .report-viz,.report-line-card,.report-full-lock{grid-column:1}
+}
+.info-button{display:inline-grid;place-items:center;flex:none;width:34px;height:34px;padding:0;border:1px solid #e1e7dc;background:#fff;color:#627058;border-radius:50%;font-size:16px;cursor:pointer}.info-button:hover{background:#eef3e9}.dialog-copy{margin-top:16px;line-height:1.6}.dialog-copy+.desc{margin-top:12px}@media(max-width:700px){.info-button{width:40px;height:40px}}
+.topic-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+.topic-item{min-width:0;border:1px solid #e0e7dc;border-radius:10px;background:#fff;overflow:hidden}
+.topic-card-toggle{width:100%;display:flex;align-items:center;gap:12px;padding:13px 14px;border:0;background:transparent;text-align:left;cursor:pointer}
+.topic-card-toggle:hover{background:#f6f8f3}
+.topic-identity{display:grid;gap:3px;min-width:0;flex:1}
+.topic-identity b{font-size:.88rem;color:#243129}
+.topic-identity small{font-size:.74rem;color:#677363}
+.our-position{display:grid;text-align:right;line-height:1.15;gap:3px}
+.our-position small{font-size:.62rem;font-weight:600;letter-spacing:.03em;color:#788372}
+.our-position strong{font-size:1.22rem;font-weight:700;color:#506037}
+.topic-card-toggle .chevron{font-size:1.15rem;color:#7d8975;transition:transform .2s}
+.topic-card-toggle[aria-expanded="true"] .chevron{transform:rotate(90deg)}
+.topic-rank-overview,.rank-line{display:flex;gap:5px;flex-wrap:wrap}
+.topic-rank-overview{padding:0 14px 13px}
+.rank-brand{display:inline-flex;align-items:center;gap:4px;padding:3px 6px;border:1px solid #edf0e9;border-radius:5px;font-size:.69rem;color:#667063;line-height:1.4}
+.rank-brand small{font-size:.65rem;color:#939c8d}
+.rank-brand.rank-us{background:#eaf1e6;border-color:#d4e2cf;color:#36513a;font-weight:700}
+.rank-brand.rank-us small{color:#617958}
+.topic-questions{border-top:1px solid #e7ede4;background:#f8faf6;padding:3px 14px 10px}
+.question-rank{padding:9px 0}
+.question-rank+.question-rank{border-top:1px solid #e3eae0}
+.question-rank p{font-size:.8rem;font-weight:600;line-height:1.4;margin-bottom:7px}
+@media(max-width:700px){.topic-cards{grid-template-columns:1fr}.topic-card-toggle{min-height:60px}}
+@media(prefers-reduced-motion:reduce){.topic-card-toggle .chevron{transition:none}}
+
+body,input,textarea,button,h1,h2,h3,h4,.logo,.brief-score b,.metric strong{font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{letter-spacing:-.035em}
+.feature-intro h2,.evidence-intro h2{font-weight:500}
+.topic-cards{grid-template-columns:1fr;gap:0;border:1px solid #e2e8df;border-radius:10px;overflow:hidden}
+.topic-item{border:0;border-radius:0}
+.topic-item+.topic-item{border-top:1px solid #e8ede5}
+.topic-card-toggle{min-height:64px;padding:11px 16px}
+.topic-identity b{font-size:.92rem;font-weight:600}
+.topic-identity small{font-size:.76rem}
+.our-position{display:flex;align-items:center;gap:8px;text-align:left}
+.our-position small{font-size:.72rem;letter-spacing:0;font-weight:400}
+.our-position strong{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#e9f0e6;font-size:.9rem}
+.topic-rank-overview{padding:0 16px 12px;gap:6px}
+.rank-brand{font-size:.75rem;padding:4px 8px;background:#f7f9f6}
+.rank-brand small{font-size:.7rem}
+.topic-questions{padding:4px 16px 10px}
+.question-rank p{font-size:.84rem;font-weight:500}
+@media(max-width:700px){.topic-card-toggle{padding:10px 12px}.topic-rank-overview{padding-inline:12px}.topic-questions{padding-inline:12px}.our-position small{font-size:.68rem}}
+
+.topic-cards{border:0;gap:8px;overflow:visible}
+.topic-item{background:#f1f4eb;border:1px solid #e2e9db;border-radius:12px;overflow:hidden}
+.topic-item:nth-child(even){background:#f8f9f4}
+.topic-card-toggle:hover{background:#e9f0e3}
+.topic-identity b{font-size:.96rem;color:#253522}
+.our-position strong{background:#53643b;color:white}
+.topic-rank-overview,.rank-line{gap:7px 12px}
+.rank-brand{display:inline-flex;align-items:center;gap:5px;border:0;background:none;padding:0;color:#536150}
+.brand-circle{display:grid;place-items:center;flex:none;width:29px;height:29px;border-radius:50%;background:#dce5d5;color:#486141;font-size:.67rem;font-weight:700}
+.rank-brand:nth-child(2) .brand-circle{background:#e2e9d9;color:#566844}
+.rank-brand:nth-child(3) .brand-circle{background:#e9ebd9;color:#6d704c}
+.rank-brand:nth-child(4) .brand-circle{background:#dce8e3;color:#4e6c60}
+.rank-brand:nth-child(5) .brand-circle{background:#e9e5d8;color:#73694d}
+.rank-brand.rank-us{background:none;border:0;color:#304c2e}
+.rank-brand.rank-us .brand-circle{background:#53643b;color:white;box-shadow:0 0 0 3px #dbe6d5}
+.rank-brand small{font-size:.65rem;color:#7b8974}
+.topic-questions{background:#fff;border-top:1px solid #dfe9dc}
+@media(max-width:700px){.topic-rank-overview,.rank-line{gap:7px 10px}.brand-circle{width:27px;height:27px}}
+
+.topic-cards{gap:0;border:1px solid #e5eae2;border-radius:10px;overflow:hidden;background:white}
+.topic-item,.topic-item:nth-child(even){background:white;border:0;border-radius:0}
+.topic-item+.topic-item{border-top:1px solid #e8ede6}
+.topic-card-toggle:hover{background:#f8faf6}
+.topic-rank-overview,.rank-line{gap:9px 16px}
+.rank-brand,.rank-brand.rank-us{gap:6px;color:#6d776b;background:none;font-weight:400}
+.rank-circle{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#f0f3ed;color:#748071;font-size:.68rem;font-weight:600;flex:none}
+.rank-brand.rank-us{color:#344a31;font-weight:650}
+.rank-brand.rank-us .rank-circle{background:#53643b;color:white}
+.our-position strong{background:#f0f3ed;color:#4d5f3d}
+.topic-questions{background:#f8faf6}
+@media(max-width:700px){.topic-rank-overview,.rank-line{gap:8px 12px}}
+
+/* A shared type scale and safe wrapping for small screens. */
+body,button,input,select,textarea,svg text{font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.prompt-preview{font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3,h4{overflow-wrap:break-word}
+.report-summary,.report-viz-card,.report-line-card,.head-to-head,.topic-item,.agent,.brief-panel{min-width:0}
+.rank-brand,.topic-identity,.h2h-tag{overflow-wrap:anywhere}
+dialog h2{overflow-wrap:anywhere}
+@media(max-width:360px){.audit-chart li{grid-template-columns:92px minmax(0,1fr) 34px}.compare-scale{margin-left:98px;margin-right:40px}.h2h-pair strong{font-size:1.6rem}.h2h-head{flex-wrap:wrap}}
+
+/* Consistent typography across the audit */
+body,button,input,select,textarea,svg text,.prompt-preview,.agent .thread,h1,h2,h3,h4{font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+body{font-weight:400}
+h1,h2,h3,h4,.logo{font-weight:600}
+.feature-intro h2,.evidence-intro h2,.audit-heading h1{font-weight:600}
+strong,b,.cta,.text-button,.badge,.topic-identity b,.topic-toggle,.rank-brand.rank-us,.our-position strong{font-weight:600}
+.eyebrow,.tag,.flag{font-weight:600;letter-spacing:.08em}
+.agent .thread p,.agent .thread li,.desc,.foot{font-weight:400}
+.agent .thread strong,.agent .thread b{font-weight:600}
+
+/* Matching chart headers and section rhythm */
+.brief-panel{padding:0 22px 22px}
+.brief-panel header,.trend-head{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line)}
+.brief-panel h2,.trend-head h3{font-size:1.05rem;line-height:1.35;font-weight:600;margin:0}
+.trend-card{padding:0 22px 22px}
+.trend-description{margin:16px 0 0}
+.audit-brief,.trend-grid,.stack{gap:16px}
+.trend-grid{margin-top:16px}
+section.audit-lead{margin-bottom:32px}
+.evidence-section{gap:16px}
+.feature-intro,.sentiment-intro,.comparison-intro,.assistant-intro{margin:32px auto 16px}
+.report-section{margin:32px auto!important}
+.agent{margin-bottom:32px}
+.card.prompt{margin:32px 0}
+@media(max-width:700px){
+  .brief-panel,.trend-card{padding:0 16px 18px}
+  .brief-panel header,.trend-head{min-height:60px}
+  .audit-brief,.trend-grid,.stack,.evidence-section{gap:12px}
+  .trend-grid{margin-top:12px}
+  section.audit-lead{margin-bottom:24px}
+  .feature-intro,.sentiment-intro,.comparison-intro,.assistant-intro{margin:24px auto 12px}
+  .report-section{margin:24px auto!important}
+  .agent{margin-bottom:24px}
+  .card.prompt{margin:24px 0}
+}
+
+/* Equal separation between the main audit sections. */
+.stack{gap:0}
+.trend-grid{margin-bottom:56px}
+.evidence-section{margin-bottom:56px!important}
+.sentiment-intro,.comparison-intro,.assistant-intro{margin:0 auto 18px}
+.sentiment-card,.head-to-head{margin-bottom:56px}
+.report-section{margin:0 auto 56px!important}
+.agent{margin-bottom:56px}
+.card.prompt{margin:0 0 56px}
+@media(max-width:700px){
+  .trend-grid{margin-bottom:40px}
+  .evidence-section{margin-bottom:40px!important}
+  .sentiment-intro,.comparison-intro,.assistant-intro{margin:0 auto 14px}
+  .sentiment-card,.head-to-head{margin-bottom:40px}
+  .report-section{margin:0 auto 40px!important}
+  .agent{margin-bottom:40px}
+  .card.prompt{margin:0 0 40px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#overview">Skip to audit</a>
+<header class="masthead"><div class="wrap"><div class="logo">orymus<span>°</span> <small style="font-size:.72rem;letter-spacing:0">AI Brand Check</small></div></div></header>
+<main id="overview" class="wrap results">
+  <nav class="audit-nav" aria-label="Audit sections"><a href="#audit-title">Overview</a><a href="#evidence-title">AI answers</a><a href="#reports">Sample report</a><a href="#agent-title">Assistant</a></nav>
+  <section class="audit-lead" aria-labelledby="audit-title">
+    <div class="audit-heading"><p class="eyebrow">Your AI visibility audit · 160STORE</p><h1 id="audit-title">When shoppers ask AI,<br><span>does your brand come up?</span></h1><p>Here’s what we found when AI answered questions about shopping for menswear in Vietnam.</p></div>
+    <div class="audit-frame"><div class="audit-brief">
+      <article class="brief-panel">
+        <header><h2>How often does AI mention each brand?</h2><button type="button" class="info-button" data-dialog="visibilityInfo" aria-label="About visibility">ⓘ</button></header>
+        <div class="brief-score"><b data-count="30" data-suffix="%">30%</b><span>of checked AI answers mention 160STORE<br><strong>Ranked #4 among 5 brands</strong></span></div>
+        <div class="compare-scale"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
+        <ul class="audit-chart" data-reveal>
+          <li><span>Routine</span><span class="animated-bar"><i style="--value:53%"></i></span><b>53%</b></li>
+          <li><span>Yody</span><span class="animated-bar"><i style="--value:51%"></i></span><b>51%</b></li>
+          <li><span>Canifa</span><span class="animated-bar"><i style="--value:37%"></i></span><b>37%</b></li>
+          <li class="audit-own"><span>160STORE</span><span class="animated-bar"><i style="--value:30%"></i></span><b>30%</b></li>
+          <li><span>Coolmate</span><span class="animated-bar"><i style="--value:28%"></i></span><b>28%</b></li>
+        </ul>
+        <p class="brief-note"><strong>What this means</strong><br>Routine appears in 53% of answers, a 23-point lead. 160STORE appears more often than Coolmate (28%).</p>
+      </article>
+      <article class="brief-panel voice-card" data-reveal><header><h2>How much of the conversation is yours?</h2><button type="button" class="info-button" data-dialog="voiceInfo" aria-label="About share of voice">ⓘ</button></header><p class="desc">160STORE accounts for 15.1% of mentions across the five tracked brands.</p>
+        <div class="voice-layout"><div class="donut" aria-hidden="true"><span><b>15.1%</b><small>160STORE</small></span></div>
+          <ul class="voice-key"><li><i style="--c:#535f37"></i><strong>160STORE</strong><b>15.1%</b></li><li><i style="--c:#74805b"></i>Routine<b>26.6%</b></li><li><i style="--c:#919d7c"></i>Yody<b>25.7%</b></li><li><i style="--c:#b3bda1"></i>Canifa<b>18.4%</b></li><li><i style="--c:#dce1d0"></i>Coolmate<b>14.2%</b></li></ul></div>
+      </article>
+    </div>
+    </div>
+  </section>
+  
+  <div class="stack">
+    <div class="trend-grid">
+      <article class="card trend-card" data-reveal><div class="trend-head"><h3>Mentions</h3><button type="button" class="info-button" data-dialog="mentionsInfo" aria-label="About mentions">ⓘ</button></div><p class="desc trend-description">Times AI mentions 160STORE in its answers.</p><strong class="trend-total">12 <small>total mentions</small></strong>
+        <svg viewBox="0 0 480 190" role="img" aria-label="Illustrative mentions: 1, 2, 1, 4, 4 from Nov 1 to Nov 5"><path d="M38 20H465 M38 55H465 M38 90H465 M38 125H465 M38 160H465" class="trend-gridlines"/><g class="axis-labels"><text x="15" y="164">0</text><text x="15" y="129">1</text><text x="15" y="94">2</text><text x="15" y="59">3</text><text x="15" y="24">4</text></g><path class="trend-path" pathLength="1" d="M40 125 L145 90 L250 125 L355 20 L460 20"/><g class="trend-dots"><circle cx="40" cy="125" r="4"/><circle cx="145" cy="90" r="4"/><circle cx="250" cy="125" r="4"/><circle cx="355" cy="20" r="4"/><circle cx="460" cy="20" r="4"/></g><g class="axis-labels x-axis"><text x="40" y="181">Nov 1</text><text x="145" y="181">Nov 2</text><text x="250" y="181">Nov 3</text><text x="355" y="181">Nov 4</text><text x="460" y="181">Nov 5</text></g></svg><p class="foot">Illustrative counts · not actual audit history.</p>
+      </article>
+      <article class="card trend-card" data-reveal><div class="trend-head"><h3>Citations</h3><button type="button" class="info-button" data-dialog="citationsInfo" aria-label="About citations">ⓘ</button></div><p class="desc trend-description">Links to 160STORE’s website in AI answers.</p><strong class="trend-total">4 <small>total citations</small></strong>
+        <svg viewBox="0 0 480 190" role="img" aria-label="Illustrative citations: 0, 1, 1, 0, 2 from Nov 1 to Nov 5"><path d="M38 20H465 M38 55H465 M38 90H465 M38 125H465 M38 160H465" class="trend-gridlines"/><g class="axis-labels"><text x="15" y="164">0</text><text x="15" y="129">1</text><text x="15" y="94">2</text><text x="15" y="59">3</text><text x="15" y="24">4</text></g><path class="trend-path" pathLength="1" d="M40 160 L145 125 L250 125 L355 160 L460 90"/><g class="trend-dots"><circle cx="40" cy="160" r="4"/><circle cx="145" cy="125" r="4"/><circle cx="250" cy="125" r="4"/><circle cx="355" cy="160" r="4"/><circle cx="460" cy="90" r="4"/></g><g class="axis-labels x-axis"><text x="40" y="181">Nov 1</text><text x="145" y="181">Nov 2</text><text x="250" y="181">Nov 3</text><text x="355" y="181">Nov 4</text><text x="460" y="181">Nov 5</text></g></svg><p class="foot">Illustrative counts · not actual audit history.</p>
+      </article>
+    </div>
+    <section class="evidence-section" aria-labelledby="evidence-title">
+      <div class="evidence-intro"><p class="eyebrow">01 / Questions and topics</p><h2 id="evidence-title">Which brands show up for each topic?</h2><p class="desc">Explore the questions shoppers ask and see how 160STORE compares with other brands.</p></div>
+    <article class="card"><p class="eyebrow num">Topic rankings</p><h3>Compare brands by question</h3><p class="desc">Select a topic to see its shopping questions and the order of brands in each answer.</p>
+      <div class="topic-cards"><section class="topic-item"><button class="topic-toggle topic-card-toggle" type="button" aria-expanded="false" aria-controls="topic-prompts-0"><span class="topic-identity"><b>Casual Menswear</b><small>40% visibility</small></span><span class="our-position"><small>160STORE</small><strong>#2</strong></span><span class="chevron" aria-hidden="true">›</span></button><div class="topic-rank-overview"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Routine</span></span><span class="rank-brand rank-us"><span class="rank-circle">2</span><span class="brand-name">160STORE</span></span><span class="rank-brand"><span class="rank-circle">3</span><span class="brand-name">Yody</span></span><span class="rank-brand"><span class="rank-circle">4</span><span class="brand-name">Canifa</span></span><span class="rank-brand"><span class="rank-circle">5</span><span class="brand-name">Coolmate</span></span></div><div class="topic-questions" id="topic-prompts-0" hidden><div class="question-rank"><p>Where can I buy casual menswear in Vietnam?</p><div class="rank-line"><span class="rank-brand rank-us"><span class="rank-circle">1</span><span class="brand-name">160STORE</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Routine</span></span><span class="rank-brand"><span class="rank-circle">3</span><span class="brand-name">Yody</span></span></div></div><div class="question-rank"><p>Best affordable men's clothing stores</p><div class="rank-line"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Routine</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Yody</span></span><span class="rank-brand rank-us"><span class="rank-circle">3</span><span class="brand-name">160STORE</span></span></div></div></div></section><section class="topic-item"><button class="topic-toggle topic-card-toggle" type="button" aria-expanded="false" aria-controls="topic-prompts-1"><span class="topic-identity"><b>Brand Discovery</b><small>50% visibility</small></span><span class="our-position"><small>160STORE</small><strong>#3</strong></span><span class="chevron" aria-hidden="true">›</span></button><div class="topic-rank-overview"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Yody</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Routine</span></span><span class="rank-brand rank-us"><span class="rank-circle">3</span><span class="brand-name">160STORE</span></span><span class="rank-brand"><span class="rank-circle">4</span><span class="brand-name">Canifa</span></span><span class="rank-brand"><span class="rank-circle">5</span><span class="brand-name">Coolmate</span></span></div><div class="topic-questions" id="topic-prompts-1" hidden><div class="question-rank"><p>Popular Vietnamese menswear brands</p><div class="rank-line"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Yody</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Routine</span></span><span class="rank-brand rank-us"><span class="rank-circle">3</span><span class="brand-name">160STORE</span></span></div></div><div class="question-rank"><p>Where to shop for men's everyday outfits?</p><div class="rank-line"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Routine</span></span><span class="rank-brand rank-us"><span class="rank-circle">2</span><span class="brand-name">160STORE</span></span><span class="rank-brand"><span class="rank-circle">3</span><span class="brand-name">Coolmate</span></span></div></div></div></section><section class="topic-item"><button class="topic-toggle topic-card-toggle" type="button" aria-expanded="false" aria-controls="topic-prompts-2"><span class="topic-identity"><b>Office Basics</b><small>30% visibility</small></span><span class="our-position"><small>160STORE</small><strong>#4</strong></span><span class="chevron" aria-hidden="true">›</span></button><div class="topic-rank-overview"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Canifa</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Routine</span></span><span class="rank-brand"><span class="rank-circle">3</span><span class="brand-name">Yody</span></span><span class="rank-brand rank-us"><span class="rank-circle">4</span><span class="brand-name">160STORE</span></span><span class="rank-brand"><span class="rank-circle">5</span><span class="brand-name">Coolmate</span></span></div><div class="topic-questions" id="topic-prompts-2" hidden><div class="question-rank"><p>Best smart casual clothes for men</p><div class="rank-line"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Routine</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Canifa</span></span><span class="rank-brand rank-us"><span class="rank-circle">3</span><span class="brand-name">160STORE</span></span></div></div><div class="question-rank"><p>Affordable office shirts for men</p><div class="rank-line"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Yody</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Routine</span></span><span class="rank-brand"><span class="rank-circle">3</span><span class="brand-name">Canifa</span></span></div></div></div></section><section class="topic-item"><button class="topic-toggle topic-card-toggle" type="button" aria-expanded="false" aria-controls="topic-prompts-3"><span class="topic-identity"><b>Polo Shirts</b><small>20% visibility</small></span><span class="our-position"><small>160STORE</small><strong>#5</strong></span><span class="chevron" aria-hidden="true">›</span></button><div class="topic-rank-overview"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Yody</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Routine</span></span><span class="rank-brand"><span class="rank-circle">3</span><span class="brand-name">Canifa</span></span><span class="rank-brand"><span class="rank-circle">4</span><span class="brand-name">Coolmate</span></span><span class="rank-brand rank-us"><span class="rank-circle">5</span><span class="brand-name">160STORE</span></span></div><div class="topic-questions" id="topic-prompts-3" hidden><div class="question-rank"><p>Where to buy polo shirts in Vietnam?</p><div class="rank-line"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Yody</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Routine</span></span><span class="rank-brand"><span class="rank-circle">3</span><span class="brand-name">Canifa</span></span></div></div><div class="question-rank"><p>Best polo shirts for work and daily wear</p><div class="rank-line"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Canifa</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Yody</span></span><span class="rank-brand"><span class="rank-circle">3</span><span class="brand-name">Routine</span></span></div></div></div></section><section class="topic-item"><button class="topic-toggle topic-card-toggle" type="button" aria-expanded="false" aria-controls="topic-prompts-4"><span class="topic-identity"><b>Fit &amp; Sizing</b><small>10% visibility</small></span><span class="our-position"><small>160STORE</small><strong>#5</strong></span><span class="chevron" aria-hidden="true">›</span></button><div class="topic-rank-overview"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Coolmate</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Yody</span></span><span class="rank-brand"><span class="rank-circle">3</span><span class="brand-name">Routine</span></span><span class="rank-brand"><span class="rank-circle">4</span><span class="brand-name">Canifa</span></span><span class="rank-brand rank-us"><span class="rank-circle">5</span><span class="brand-name">160STORE</span></span></div><div class="topic-questions" id="topic-prompts-4" hidden><div class="question-rank"><p>Which menswear brands have accurate size charts?</p><div class="rank-line"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Coolmate</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Yody</span></span><span class="rank-brand"><span class="rank-circle">3</span><span class="brand-name">Routine</span></span></div></div><div class="question-rank"><p>How to find the right jeans size online?</p><div class="rank-line"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Yody</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Coolmate</span></span><span class="rank-brand"><span class="rank-circle">3</span><span class="brand-name">Canifa</span></span></div></div></div></section><section class="topic-item"><button class="topic-toggle topic-card-toggle" type="button" aria-expanded="false" aria-controls="topic-prompts-5"><span class="topic-identity"><b>Men's Jeans</b><small>30% visibility</small></span><span class="our-position"><small>160STORE</small><strong>#4</strong></span><span class="chevron" aria-hidden="true">›</span></button><div class="topic-rank-overview"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Routine</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Yody</span></span><span class="rank-brand"><span class="rank-circle">3</span><span class="brand-name">Coolmate</span></span><span class="rank-brand rank-us"><span class="rank-circle">4</span><span class="brand-name">160STORE</span></span><span class="rank-brand"><span class="rank-circle">5</span><span class="brand-name">Canifa</span></span></div><div class="topic-questions" id="topic-prompts-5" hidden><div class="question-rank"><p>Affordable men's jeans in Vietnam</p><div class="rank-line"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Routine</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Yody</span></span><span class="rank-brand rank-us"><span class="rank-circle">3</span><span class="brand-name">160STORE</span></span></div></div><div class="question-rank"><p>Best straight-fit jeans for men</p><div class="rank-line"><span class="rank-brand"><span class="rank-circle">1</span><span class="brand-name">Coolmate</span></span><span class="rank-brand"><span class="rank-circle">2</span><span class="brand-name">Routine</span></span><span class="rank-brand"><span class="rank-circle">3</span><span class="brand-name">Yody</span></span></div></div></div></section></div>
+    </article>
+    </section>
+    <div class="feature-intro sentiment-intro"><p class="eyebrow">02 / Brand perception</p><h2>How does AI describe your brand?</h2><p>See what ChatGPT praises and where it finds gaps.</p></div>
+    <article class="card sentiment-card" data-reveal><h3>Brand Perception <span class="badge">ChatGPT</span></h3>
+      <div class="score-layout"><div class="score-visual">
+        <div class="score-ring" role="img" aria-label="Sentiment score 61 out of 100">
+          <svg viewBox="0 0 144 144" aria-hidden="true"><circle cx="72" cy="72" r="59" pathLength="100" class="ring-track"/><circle cx="72" cy="72" r="59" pathLength="100" class="ring-value"/></svg>
+          <div aria-hidden="true"><b>61</b><small>/ 100</small></div>
+        </div>
+        <ul class="key"><li style="--dot:#318861">44% positive</li><li style="--dot:#9a9d96">33% neutral</li><li style="--dot:#bd5145">22% negative</li></ul>
+      </div><div class="sentiment-notes">
+        <p>ChatGPT describes 160STORE as <span class="strength">affordable everyday menswear</span> with <span class="strength">a wide range of casual basics</span> and <span class="strength">convenient online shopping</span>.</p>
+        <p>It also points to <span class="weakness">unclear fit guidance</span> and <span class="weakness">limited independent customer reviews</span>.</p>
+      </div></div>
+      <div class="card-footer"><div class="score-controls"><button class="text-button" type="button" data-dialog="sentimentDialog">Sources</button></div><span class="foot"><span class="strength">Strength</span> · <span class="weakness">Weakness</span> · Percentages rounded</span></div>
+    </article>
+
+    
+    <div class="feature-intro comparison-intro"><p class="eyebrow">03 / Competitor comparison</p><h2>Go head-to-head with a competitor.</h2><p>Compare visibility and what AI says each brand is known for.</p></div>
+    <article class="card head-to-head">
+      <div class="h2h-head"><div><h3>Head-to-Head</h3><p class="desc" id="h2h-gap">Routine leads by 23 percentage points</p></div><label for="competitor-select">Competitor <select id="competitor-select"><option value="Routine">Routine · 53%</option><option value="Yody">Yody · 51%</option><option value="Canifa">Canifa · 37%</option><option value="Coolmate">Coolmate · 28%</option></select></label></div>
+      <div class="h2h-pair"><div><span>160STORE</span><strong>30%</strong></div><div><span id="h2h-name">Routine</span><strong id="h2h-value">53%</strong></div></div>
+      <p id="h2h-summary" class="desc h2h-summary">Routine appears in 53% of answers, compared with 30% for 160STORE. Routine appears earlier on average (2.1 vs 3.6).</p>
+      <div class="h2h-bar" role="img" aria-label="Visibility comparison, 160STORE 30%, Routine 53%"><span id="h2h-ours" style="width:36.14%"></span><span></span></div>
+      <div class="h2h-known"><div><h4>160STORE · known for</h4><span class="h2h-tag good">Accessible everyday menswear</span><span class="h2h-tag good">Affordable price points</span><span class="h2h-tag good">Wide selection of casual basics</span><span class="h2h-tag weak">Unclear fit guidance</span><span class="h2h-tag weak">Limited independent reviews</span></div><div><h4><span id="h2h-known-name">Routine</span> · known for</h4><div id="h2h-attributes"><span class="h2h-tag good">Polished smart-casual range</span><span class="h2h-tag good">Clear sizing guidance</span><span class="h2h-tag good">Strong polo assortment</span><span class="h2h-tag weak">Premium pricing for some shoppers</span><span class="h2h-tag weak">Limited detailed fit comparisons</span></div></div></div>
+      <p class="foot h2h-footer">Illustrative positive and negative observations · sample data, not verified brand claims</p>
+    </article>
+    <section id="reports" class="report-section" aria-labelledby="report-title">
+      <div class="feature-intro">
+        <p class="eyebrow">04 / Orymus reports</p>
+        <h2 id="report-title">Your findings, <span>ready to share.</span></h2>
+        <p>Give your team the findings, the competitive picture and the next steps in one report.</p>
+      </div>
+      <div class="report-window">
+        <div class="report-toolbar"><span class="report-wordmark">orymus° <small>/ Reports</small></span><span class="report-preview-label">Sample report</span></div>
+        <div class="report-workspace report-dashboard">
+          <div class="report-summary"><p class="eyebrow">Executive overview · 160STORE</p><h3>Your brand in AI answers</h3><p>160STORE appears in 30% of checked answers. Routine leads at 53%.</p></div>
+          <div class="report-viz">
+            <div class="report-viz-card"><h4>Visibility</h4><div class="report-ring report-visibility"><div><strong>30%</strong><small>160STORE</small></div></div><p>Share of answers mentioning 160STORE</p></div>
+            <div class="report-viz-card"><h4>Share of voice</h4><div class="report-ring report-voice"><div><strong>15.1%</strong><small>160STORE</small></div></div><p>Your share of all tracked brand mentions</p></div>
+          </div>
+          <div class="report-line-card">
+            <div class="report-chart-head"><div><h4>Visibility over time</h4><p>Illustrative example · not audit data</p></div><span>Example</span></div>
+            <svg viewBox="0 0 600 150" role="img" aria-label="Illustrative trend chart, example data for two brands">
+              <path d="M42 20H580 M42 58H580 M42 96H580 M42 130H580" stroke="#e8ebe4" fill="none"/>
+              <g fill="#7b8276" font-size="10"><text x="8" y="23">60%</text><text x="8" y="61">40%</text><text x="8" y="99">20%</text><text x="15" y="133">0%</text></g>
+              <path d="M42 91 C95 89 118 75 174 71 S250 68 308 62 S394 45 443 38 S529 36 580 33" stroke="#97a487" stroke-width="2.5" fill="none"/>
+              <path d="M42 112 C94 110 128 105 174 100 S262 96 308 91 S398 83 443 79 S530 78 580 75" stroke="#53643b" stroke-width="2.5" fill="none"/>
+              <g fill="#53643b"><circle cx="42" cy="112" r="3"/><circle cx="174" cy="100" r="3"/><circle cx="308" cy="91" r="3"/><circle cx="443" cy="79" r="3"/><circle cx="580" cy="75" r="3"/></g>
+            </svg>
+            <div class="report-line-legend"><span><i style="background:#53643b"></i>160STORE</span><span><i style="background:#97a487"></i>Routine</span></div>
+          </div>
+          <div class="report-locked report-full-lock">
+            <div class="report-blur report-lock-content" aria-hidden="true">
+              <div class="report-priority"><span class="report-label">PRIORITY OPPORTUNITY</span><h4>Fit &amp; sizing</h4><p>Improve the jeans size guide and rerun sizing questions.</p><span class="report-tag">10% topic visibility</span></div>
+              <div class="report-lock-table"><h4>Questions where competitors lead</h4><div class="ghost-row"><span>Topic</span><span>160STORE</span><span>Leader</span></div><div class="ghost-row"><span>Fit and sizing</span><span>10%</span><span>Coolmate</span></div><div class="ghost-row"><span>Polo shirts</span><span>20%</span><span>Yody</span></div><h4>Recommended content</h4><div class="ghost-row"><span>Priority</span><span>Topic</span><span>Action</span></div></div>
+            </div>
+            <div class="report-gate"><span>FULL REPORT</span><strong>See all findings and actions</strong><button class="cta" type="button" data-dialog="reportSignup">Get full report</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="feature-intro assistant-intro"><p class="eyebrow">05 / Ask Orymus</p><h2>Turn your findings into <span>your next move.</span></h2><p>Ask a follow-up about the audit or get a starting outline for a page you want to improve.</p></div>
+    <section class="agent" aria-labelledby="agent-title">
+      <div class="agent-header"><h3 id="agent-title"><span class="agent-mark" aria-hidden="true">✳</span> Orymus</h3><span class="agent-status">● &nbsp; Audit preview</span></div>
+      <div class="thread" aria-live="polite"><p id="agent-question" class="bubble">How can we improve our visibility for sizing questions?</p><div class="agent-message"><p class="agent-speaker">✳ &nbsp; Orymus</p><div class="agent-reply" id="agent-reply"><div class="highlight"><p>Start with your jeans size guide. In this sample, 160STORE appeared in 10% of answers about fit and sizing.</p><p>Here are three things to try:</p><ol class="action-steps">
+        <li><strong>Update the jeans size guide.</strong> Add waist and inseam measurements by size.</li>
+        <li><strong>Explain each fit.</strong> Describe how slim, regular and relaxed jeans fit, and link to the guide from product pages.</li>
+        <li><strong>Run the same sizing prompts again.</strong> Check whether more answers mention 160STORE or link to its size guide.</li>
+      </ol></div></div></div></div>
+      <form id="agent-form" class="composer"><input id="agent-input" aria-label="Ask about the audit" placeholder="Ask about visibility, competitors or sizing…" required><button type="submit" class="cta" aria-label="Send question">↑</button></form>
+      <div class="agent-suggestions"><button type="button" data-question="Where does Routine lead?">Where does Routine lead?</button><button type="button" data-question="Draft an outline for a jeans size guide">Draft a size guide outline</button></div>
+    </section>
+
+  </div>
+
+  <section id="prompt" class="card prompt block" aria-labelledby="prompt-title">
+    <p class="eyebrow">Try it yourself</p><h2 id="prompt-title">Run your own AI check</h2>
+    <p class="desc">Use a ready-to-paste question to see which menswear brands AI recommends and what sources it points shoppers to.</p>
+    <div class="prompt-preview">Recommend Vietnamese menswear brands for a shopper looking for affordable everyday clothes…</div>
+    <button class="cta" type="button" data-dialog="promptDialog">Copy Prompt</button>
+    <p class="foot">A short form opens first. Then you can copy the full prompt.</p>
+  </section>
+</main>
+<footer class="footer"><div class="wrap"><p class="foot">Figures and answers are illustrative. AI responses can vary between runs.</p><p class="foot">Orymus · AI Brand Check</p></div></footer>
+
+<dialog id="visibilityInfo" aria-labelledby="visibility-info-title"><div class="dialog-top"><h2 id="visibility-info-title">Visibility</h2><button type="button" class="text-button close" data-close aria-label="Close">×</button></div><p class="dialog-copy">Visibility shows the percentage of checked AI answers that mention a brand.</p><p class="highlight">For example, if 3 out of 10 answers mention 160STORE, its visibility is 30%.</p><p class="desc">The competitor chart compares brands across the same set of questions.</p></dialog>
+<dialog id="voiceInfo" aria-labelledby="voice-info-title"><div class="dialog-top"><h2 id="voice-info-title">Share of Voice</h2><button type="button" class="text-button close" data-close aria-label="Close">×</button></div><p class="dialog-copy">Share of Voice shows how much of the tracked brand conversation belongs to 160STORE.</p><p class="highlight">For example, if the five brands receive 100 mentions in total and 160STORE receives 15, its share is 15%.</p></dialog>
+<dialog id="mentionsInfo" aria-labelledby="mentions-info-title"><div class="dialog-top"><h2 id="mentions-info-title">Mentions</h2><button type="button" class="text-button close" data-close aria-label="Close">×</button></div><p class="dialog-copy">Mentions show how often AI answers name a brand. Tracking them over time can reveal changes or spikes.</p><p class="desc">The chart on this page uses illustrative counts, not recorded audit history.</p></dialog>
+<dialog id="citationsInfo" aria-labelledby="citations-info-title"><div class="dialog-top"><h2 id="citations-info-title">Citations</h2><button type="button" class="text-button close" data-close aria-label="Close">×</button></div><p class="dialog-copy">A citation is a link to your website used as a source in an AI answer.</p><p class="desc">The chart on this page uses illustrative counts, not recorded audit history.</p></dialog>
+<dialog id="answerEvidence" aria-labelledby="answer-evidence-title"><div class="dialog-top"><h2 id="answer-evidence-title">Sample ChatGPT answer</h2><button type="button" class="text-button close" data-close aria-label="Close">×</button></div>
+  <p class="highlight"><strong>Which Vietnamese menswear brands offer affordable everyday clothing?</strong></p>
+  <p class="desc">Consumers can compare <strong>160STORE</strong>, Routine, Yody and other retailers based on price, available styles, product materials and store policies. Verify current collections and prices on each retailer’s website.</p>
+  <p class="desc"><strong>Brands named:</strong> 160STORE, Routine and Yody.<br><strong>Source links:</strong> None in this sample answer.</p>
+</dialog>
+<dialog id="reportSignup" aria-labelledby="signup-title"><div class="dialog-top"><h2 id="signup-title">Get the full report</h2><button type="button" class="text-button close" data-close aria-label="Close">×</button></div><p class="desc">Leave your details to request the complete audit.</p><form id="report-request"><label>Name<input name="name" autocomplete="name" required></label><label>Work email<input name="email" type="email" autocomplete="email" required></label><button class="cta" type="submit">Request report</button><p id="report-status" role="status"></p></form></dialog>
+<dialog id="sentimentDialog" aria-labelledby="sentiment-source-title"><div class="dialog-top"><h2 id="sentiment-source-title">Brand Perception sources</h2><button type="button" class="text-button close" data-close aria-label="Close">×</button></div>
+  <p class="highlight">The summary and score come from the sample ChatGPT assessment in this mockup. Individual source links for that assessment are unavailable in the sample.</p>
+</dialog>
+<dialog id="promptDialog" aria-labelledby="prompt-dialog-title"><div class="dialog-top"><h2 id="prompt-dialog-title">Unlock the full prompt</h2><button type="button" class="text-button close" data-close aria-label="Close">×</button></div>
+  <form id="promptForm">
+    <p class="desc">Enter your details to reveal the prompt. This demo does not submit your details.</p>
+    <label>Name<input name="name" autocomplete="name" required></label>
+    <label>Work email<input name="email" type="email" autocomplete="email" required></label>
+    <button type="submit" class="cta">Show full prompt</button>
+  </form>
+  <div id="unlocked" hidden>
+    <label for="fullPrompt">Prompt to paste into your AI tool</label>
+    <textarea id="fullPrompt" readonly>Recommend Vietnamese menswear brands for a shopper looking for affordable everyday clothes. Compare prices, sizing guidance and shopping options. Explain when you would recommend each brand and include source links for specific claims where available.</textarea>
+    <button type="button" class="cta" id="copyPrompt">Copy to clipboard</button>
+    <p id="copyStatus" role="status"></p>
+  </div>
+</dialog>
+
+<script>
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const ring = document.querySelector('.ring-value');
+let scoreAnimation;
+function playScore() {
+  scoreAnimation?.cancel();
+  if (!reducedMotion.matches && ring.animate) {
+    scoreAnimation = ring.animate(
+      [{strokeDashoffset: 100}, {strokeDashoffset: 39}],
+      {duration: 1600, easing: 'cubic-bezier(.22,.7,.3,1)'}
+    );
+  }
+}
+
+document.querySelectorAll('.topic-toggle').forEach(button => {
+  button.addEventListener('click', () => {
+    const rows = document.getElementById(button.getAttribute('aria-controls'));
+    rows.hidden = !rows.hidden;
+    button.setAttribute('aria-expanded', String(!rows.hidden));
+  });
+});
+if (!reducedMotion.matches && 'IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    for (const {target, isIntersecting} of entries) {
+      if (!isIntersecting) continue;
+      observer.unobserve(target);
+      if (!target.hasAttribute('data-count')) {
+        target.classList.add('animate');
+        if (target.contains(ring)) playScore();
+        continue;
+      }
+      const {count, suffix} = target.dataset;
+      const precision = count.includes('.') ? 1 : 0;
+      const start = performance.now();
+      const tick = now => {
+        const progress = Math.min((now - start) / 850, 1);
+        target.textContent = (Number(count) * (1 - (1 - progress) ** 3)).toFixed(precision) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
+  }, {threshold: .2});
+  document.querySelectorAll('[data-count], [data-reveal]').forEach(item => observer.observe(item));
+}
+
+document.querySelectorAll('[data-dialog]').forEach(button => {
+  button.addEventListener('click', () => document.getElementById(button.dataset.dialog).showModal());
+});
+document.querySelectorAll('[data-close]').forEach(button => {
+  button.addEventListener('click', () => button.closest('dialog').close());
+});
+
+const form = document.querySelector('#promptForm');
+const unlocked = document.querySelector('#unlocked');
+const copyButton = document.querySelector('#copyPrompt');
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  form.reset();
+  form.hidden = true;
+  unlocked.hidden = false;
+  copyButton.focus();
+});
+
+copyButton.addEventListener('click', async () => {
+  const prompt = document.querySelector('#fullPrompt');
+  const status = document.querySelector('#copyStatus');
+  try {
+    await navigator.clipboard.writeText(prompt.value);
+    status.textContent = 'Copied. Paste it into your AI tool.';
+  } catch {
+    prompt.focus();
+    prompt.select();
+    status.textContent = 'Use your device’s Copy command to copy the selected prompt.';
+  }
+});
+
+const agentReply = document.querySelector('#agent-reply');
+const originalAdvice = agentReply.innerHTML;
+const agentQuestion = document.querySelector('#agent-question');
+function replyToAudit(question) {
+  agentQuestion.textContent = question;
+  if (/draft|outline|content/i.test(question)) {
+    agentReply.textContent = 'Draft outline: 1. Show shoppers how to measure their waist and inseam. 2. Add a size table using verified garment measurements. 3. Explain slim, regular and relaxed fits with product examples. 4. Answer what to do between sizes and link to the returns policy.';
+  } else if (/fit|siz|fix|priorit|jeans/i.test(question)) {
+    agentReply.innerHTML = originalAdvice;
+  } else if (/routine|competit|visibility|rank/i.test(question)) {
+    agentReply.textContent = 'Routine has 53% visibility, 23 percentage points ahead of 160STORE. Open Topic Rankings to see which brands appear for the same shopping prompts.';
+  } else {
+    agentReply.textContent = 'This preview can explain competitor visibility, suggest priorities and outline a jeans size guide. Try one of the suggested questions.';
+  }
+}
+document.querySelector('#agent-form').addEventListener('submit', event => {
+  event.preventDefault();
+  const input = document.querySelector('#agent-input');
+  if (input.value.trim()) replyToAudit(input.value.trim());
+  input.value = '';
+});
+document.querySelectorAll('[data-question]').forEach(button => {
+  button.addEventListener('click', () => replyToAudit(button.dataset.question));
+});
+
+document.querySelector('#report-request').addEventListener('submit', event => {
+  event.preventDefault();
+  document.querySelector('#report-status').textContent = 'This is a preview. Your request has not been sent.';
+});
+
+const competitorData = {
+  Routine: {visibility: 53, position: 2.1, attributes: ['Polished smart-casual range', 'Clear sizing guidance', 'Strong polo assortment'], weaknesses: ['Premium pricing for some shoppers', 'Limited detailed fit comparisons']},
+  Yody: {visibility: 51, position: 2.4, attributes: ['Everyday family clothing', 'Broad store presence', 'Accessible basics'], weaknesses: ['Limited premium fabric detail', 'Inconsistent fit detail across products']},
+  Canifa: {visibility: 37, position: 3.0, attributes: ['Casual wardrobe staples', 'Wide product selection', 'Family-focused collections'], weaknesses: ['Limited comparison content', 'Fit varies across product lines']},
+  Coolmate: {visibility: 28, position: 3.8, attributes: ['Online-first menswear', 'Simple everyday basics', 'Clear product information'], weaknesses: ['Limited in-person shopping', 'Narrower formalwear selection']}
+};
+document.querySelector('#competitor-select').addEventListener('change', event => {
+  const name = event.target.value;
+  const data = competitorData[name];
+  const difference = data.visibility - 30;
+  document.querySelector('#h2h-name').textContent = name;
+  document.querySelector('#h2h-known-name').textContent = name;
+  document.querySelector('#h2h-value').textContent = data.visibility + '%';
+  document.querySelector('#h2h-gap').textContent = difference > 0 ? name + ' leads by ' + difference + ' percentage points' : '160STORE leads by ' + Math.abs(difference) + ' percentage points';
+  document.querySelector('#h2h-summary').textContent = name + ' appears in ' + data.visibility + '% of answers, compared with 30% for 160STORE.' + (data.position ? ' Average position is ' + data.position + ' for ' + name + ' and 3.6 for 160STORE.' : ' Position and sentiment data are unavailable in this sample.');
+  document.querySelector('#h2h-ours').style.width = (30 / (30 + data.visibility) * 100) + '%';
+  document.querySelector('.h2h-bar').setAttribute('aria-label', 'Visibility comparison, 160STORE 30%, ' + name + ' ' + data.visibility + '%');
+  const attributes = document.querySelector('#h2h-attributes');
+  attributes.replaceChildren();
+  if (data.attributes) {
+    data.attributes.forEach(attribute => {
+      const tag = document.createElement('span');
+      tag.className = 'h2h-tag good';
+      tag.textContent = attribute;
+      attributes.appendChild(tag);
+    });
+  }
+  data.weaknesses.forEach(weakness => {
+    const tag = document.createElement('span');
+    tag.className = 'h2h-tag weak';
+    tag.textContent = weakness;
+    attributes.appendChild(tag);
+  });
+});
+</script>
+</body>
+</html>
